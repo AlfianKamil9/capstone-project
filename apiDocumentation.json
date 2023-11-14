@@ -1,0 +1,176 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "DOKUMENTASI API CAPSTONE PROJECT",
+    "version": "1.0.0",
+    "description": "API Capstone Project"
+  },
+  "security": [],
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "localhost"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Artikel",
+      "description": "API Artikel"
+    },
+    {
+      "name": "Question",
+      "description": "API Question"
+    },
+    {
+      "name": "Login",
+      "description": "API Login"
+    },
+    {
+      "name": "Register",
+      "description": "API Register"
+    },
+    {
+      "name": "Logout",
+      "description": "API Logout"
+    }
+  ],
+  "paths": {
+    "/artikel": {
+      "get": {
+        "tags": ["Artikel"],
+        "summary": "Get all Artikel",
+        "responses": {
+          "200": {
+            "description": "Successfull Get All Data"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/artikel/{id}": {
+      "get": {
+        "tags": ["Artikel"],
+        "summary": "Get Detail Artikel",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "ID ARTIKEL"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull Get Detail Data"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": ["Register"],
+        "summary": "Create User",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": { "type": "string" },
+                  "name": { "type": "string" },
+                  "familyEmail": { "type": "string" },
+                  "password": { "type": "string" },
+                  "confPassword": { "type": "string" }
+                },
+                "required": ["email", "name", "familyEmail", "password", "confPassword"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Error, Validasi data"
+          },
+          "201": {
+            "description": "Successfully Created"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": ["Login"],
+        "summary": "Login User",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": { "type": "string" },
+                  "password": { "type": "string" }
+                },
+                "required": ["email", "password"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Error, Validasi data"
+          },
+          "401": {
+            "description": "Account Not Found"
+          },
+          "200": {
+            "description": "Successfully Login"
+          }
+        }
+      }
+    },
+    "/questions": {
+      "get": {
+        "tags": ["Question"],
+        "summary": "Get all Question",
+        "responses": {
+          "200": {
+            "description": "Successfull Get All Data"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

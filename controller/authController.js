@@ -1,10 +1,13 @@
-const Users = require('../models/User');
+const { User } = require('../models');
 const bcrypt = require('bcrypt');
 const validator = require('validator');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
+const tokenBlacklist = new Set();
 
 const register = async (req, res) => {
   const { name, email, password, confPassword, familyEmail } = req.body;
-  const cekEmail = await Users.findOne({ where: { email: email } });
+  const cekEmail = await User.findOne({ where: { email: email } });
   const salt = await bcrypt.genSalt();
   const hashPass = await bcrypt.hash(password, salt);
 
@@ -14,7 +17,7 @@ const register = async (req, res) => {
   if (cekEmail) return res.status(400).json({ code: 400, message: 'Error, Email was already used, Please use another email' });
 
   try {
-    await Users.create({
+    await User.create({
       name: name,
       email: email,
       familyEmail: familyEmail,
@@ -38,16 +41,54 @@ const login = async (req, res) => {
   if (!email || !password) return res.status(400).json({ code: 400, message: 'Error, Please All Fields are required to filled' });
   if (!validator.isEmail(email)) return res.status(400).json({ code: 400, message: 'Error, Please Invalid Email Type' });
 
-  const cekUser = await Users.findOne({ where: { email: email } });
+  const cekUser = await User.findOne({ where: { email: email } });
   if (!cekUser) return res.status(401).json({ code: 401, message: 'Error, Your Account is Not Found' });
 
   const passMatched = await bcrypt.compare(password, cekUser.password);
   if (!passMatched) return res.status(401).json({ code: 401, message: 'Error, Your Account is Not Found' });
-
-  //return res.status(200).json({ code: 200, message: 'Successfull Login' });
+  const payload = {
+    id: cekUser.id,
+    name: cekUser.name,
+    email: cekUser.email,
+  };
+  const token = jwt.sign(payload, process.env.TOKEN);
+  await User.update(
+    {
+      token: token,
+    },
+    {
+      where: {
+        email: email,
+      },
+    }
+  );
+  return res.status(200).json({ code: 200, message: 'Successfull Login', token: token });
 };
 
-const logout = async () => {};
+const logout = async (req, res) => {
+  const id = req.userData.id;
+  const token = req.headers['authorization'];
+
+  try {
+    await User.update(
+      {
+        token: null,
+      },
+      {
+        where: {
+          id: id,
+        },
+      }
+    );
+    tokenBlacklist.add(token);
+    if (!tokenBlacklist) {
+      return res.status(400).json({ code: 400, message: 'Gagal Logout' });
+    }
+    return res.status(200).json({ code: 200, message: 'Successfull Logout' });
+  } catch (error) {
+    return res.status(400).json({ code: 400, message: 'Error' });
+  }
+};
 
 module.exports = {
   register,
