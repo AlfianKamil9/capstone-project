@@ -163,6 +163,25 @@
           }
         ]
       }
+    },
+    "/logout": {
+      "delete": {
+        "tags": ["Logout"],
+        "summary": "  Logout",
+        "responses": {
+          "200": {
+            "description": "Successfull Logout"
+          },
+          "400": {
+            "description": "Gagal Logout"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
     }
   },
   "components": {
