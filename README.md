@@ -21,7 +21,7 @@ If you want to try this project,
 2. Install dependencies
 
    ```Bash
-   NPM install
+   npm install
    ```
 ## Deploy to Compute Engine Instance
 ## Deploy to APP Engine 
