@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">bcareApp</string>
+
+    // untuk logo
+    <string name="b">B</string>
+    <string name="care">Care</string>
+
+    // content Description
+    <string name="dLogo">This is logo of BCare</string>
+    <string name="dLoginImage">Logo BCare for Login Page</string>
+
+    // tombol
+    <string name="bsignup">Signup</string>
+    <string name="blogin">Login</string>
+    <string name="bgoogleLogin">Sign in with Google</string>
+
+    // hint
+    <string name="hEmail">Email</string>
+    <string name="hPassword">Password</string>
+    <string name="hUsername">Username</string>
+    <string name="hFamily">Family Email</string>
+
+
+    // text
+    <string name="tspalsh">BabyBlues Detection App</string>
+    <string name="twelcome">The best time to start knowing your Mental Health is now!</string>
+    <string name="tor">OR</string>
+    <string name="tloginPage">Welcome to BCare! 🤱🍼👶</string>
+
+    <string name="custom_edit_text_description">Description of your custom edit text.</string>
+    <string name="custom_edit_text_error_description">Error in your custom edit text.</string>
+
+
 </resources>
