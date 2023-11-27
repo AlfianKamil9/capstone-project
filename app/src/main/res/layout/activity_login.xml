@@ -7,17 +7,17 @@
     tools:context=".ui.login.LoginActivity">
 
     <ImageView
-        android:id="@+id/ivWelcome"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="100dp"
+        android:id="@+id/ivLogin"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/tvWelcome"
+        android:id="@+id/tvLogin"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_marginTop="45dp"
@@ -26,7 +26,7 @@
         android:fontFamily="@font/mediumpoppins"
         android:textSize="20sp"
         android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/ivWelcome"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
         tools:ignore="MissingConstraints"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome">
+        app:layout_constraintTop_toBottomOf="@+id/tvLogin">
 
         <EditText
             android:id="@+id/etUsernameLogin"
@@ -45,7 +45,7 @@
             android:hint="@string/hUsername"
             android:fontFamily="@font/regularpoppins"
             android:inputType="text"
-            android:padding="15dp"
+            android:padding="10dp"
             android:drawableStart="@drawable/ic_person"
             android:drawablePadding="10dp"
             android:layout_marginStart="15dp"
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/hPassword"
             android:inputType="textPassword"
-            android:padding="20dp"
+            android:padding="12dp"
             android:drawableStart="@drawable/ic_lock"
             android:drawablePadding="10dp"
             android:layout_marginStart="15dp"
@@ -87,10 +87,10 @@
         android:id="@+id/btnLogin"
         android:layout_width="360dp"
         android:layout_height="53dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:backgroundTint="@color/blue2"
         android:background="@drawable/bg_corner"
-        android:text="@string/bsignup"
+        android:text="@string/blogin"
         android:textColor="@color/white"
         android:textSize="22sp"
         android:fontFamily="@font/extraboldoppins"

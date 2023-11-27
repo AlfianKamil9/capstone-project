@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">bcareApp</string>
+    <string name="app_name">BCare</string>
 
     // untuk logo
     <string name="b">B</string>
@@ -20,15 +20,20 @@
     <string name="hUsername">Username</string>
     <string name="hFamily">Family Email</string>
 
-
     // text
     <string name="tspalsh">BabyBlues Detection App</string>
     <string name="twelcome">The best time to start knowing your Mental Health is now!</string>
     <string name="tor">OR</string>
     <string name="tloginPage">Welcome to BCare! 🤱🍼👶</string>
+    <string name="tsignupPage">Complete your data</string>
 
-    <string name="custom_edit_text_description">Description of your custom edit text.</string>
-    <string name="custom_edit_text_error_description">Error in your custom edit text.</string>
+    //label
+    <string name="lHome">Home</string>
+    <string name="lProfile">Profile</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
