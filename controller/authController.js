@@ -44,10 +44,43 @@ const login = async (req, res) => {
   const passMatched = await bcrypt.compare(password, cekUser.password);
   if (!passMatched) return res.status(401).json({ code: 401, message: 'Error, Your Account is Not Found' });
 
+  try {
+    await Users.findAll({
+      email: req.body.email
+    });
+    await bcrypt.compare(req.body.password, user[0].password );
+    if(!match) return res.status(404).json({msg:"Password Salah"});
+      userid = user[0].id;
+      name = user[0].name;
+      email = user[0].email;
+  } catch (error) {
+    res.status(404).json({msg:"Email tidak ditemukan"});
+  }
   //return res.status(200).json({ code: 200, message: 'Successfull Login' });
 };
 
-const logout = async () => {};
+
+const logout = async (req, res) => {
+  const id = req.userData.id;
+  const token = req.headers['authorization'];
+
+  try {
+    await User.update(
+      {
+        where: {
+          id: id,
+        },
+      }
+    );
+    tokenBlacklist.add(token);
+      if (!tokenBlacklist) {
+        return res.status(400).json({msg: 'Gagal' });
+      }
+    return res.status(200).json({msg: 'Berhasil Logout' });
+  } catch (error) {
+    return res.status(400).json({msg: 'Gagal' });
+  }
+};
 
 module.exports = {
   register,
