@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="390dp"
+        android:layout_height="130dp"
+        android:layout_margin="10dp"
+        card_view:cardCornerRadius="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="390dp"
+            android:layout_height="130dp"
+            android:padding="10dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgArtikel"
+                android:layout_width="85dp"
+                android:layout_height="72dp"
+                android:layout_marginTop="13dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/lovemom"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintHorizontal_bias="1"
+                card_view:layout_constraintStart_toEndOf="@+id/txtArtikel"
+                card_view:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtArtikel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/aArtikel"
+                android:fontFamily="@font/boldpoppins"
+                android:textSize="10sp"
+                android:drawableStart="@drawable/reading"
+                card_view:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/aArtikel"/>
+
+            <TextView
+                android:id="@+id/tvJudulArtikel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/aJudulArtikel"
+                android:textSize="15sp"
+                android:fontFamily="@font/boldpoppins"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtArtikel"
+                tools:text="@string/aJudulArtikel"/>
+
+            <TextView
+                android:id="@+id/tvIsiArtikel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/aJudulArtikel"
+                android:textSize="12sp"
+                android:fontFamily="@font/regularpoppins"
+                android:maxLines="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulArtikel"
+                tools:text="@string/aIsiArtikel"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

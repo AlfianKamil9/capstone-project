@@ -31,6 +31,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="88dp">
 
         <fragment
@@ -47,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/blue2"
+        android:backgroundTint="@color/white2"
         app:fabCradleMargin="16dp"
         app:fabCradleRoundedCornerRadius="10dp"
         app:fabCradleVerticalOffset="10dp">
@@ -58,6 +59,8 @@
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
             android:background="@android:color/transparent"
+            app:itemIconTint="@color/bottom_nav_color_selector"
+            app:itemTextColor="@color/bottom_nav_color_selector"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_nav_menu" />
 
@@ -71,6 +74,6 @@
         android:contentDescription="@string/dLogo"
         android:src="@drawable/facescan"
         app:layout_anchor="@+id/bottom_app_bar"
-        app:backgroundTint="@color/grey2"/>
+        app:backgroundTint="@color/blue2"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

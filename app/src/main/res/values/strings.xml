@@ -26,10 +26,17 @@
     <string name="tor">OR</string>
     <string name="tloginPage">Welcome to BCare! 🤱🍼👶</string>
     <string name="tsignupPage">Complete your data</string>
+    <string name="thello">Hello, </string>
+    <string name="thomePage">We wish you have a good day 😊</string>
 
     //label
     <string name="lHome">Home</string>
     <string name="lProfile">Profile</string>
+
+    //artikel
+    <string name="aArtikel">Artikel</string>
+    <string name="aJudulArtikel">Judul Artikelnya</string>
+    <string name="aIsiArtikel">Isi Artikelnya</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

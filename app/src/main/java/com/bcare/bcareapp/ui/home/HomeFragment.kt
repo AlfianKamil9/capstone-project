@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bcare.bcareapp.R
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,8 +37,22 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        getSlide(view)
+        return view
+    }
+
+    private fun getSlide(view: View) {
+        val imageSlider: ImageSlider = view.findViewById(R.id.slider)
+        val imageList = ArrayList<SlideModel>()
+        imageList.add(SlideModel(R.drawable.slider1))
+        imageList.add(SlideModel(R.drawable.slider2))
+        imageList.add(SlideModel(R.drawable.slider3))
+        imageList.add(SlideModel(R.drawable.slider4))
+        imageList.add(SlideModel(R.drawable.slider5))
+
+        imageSlider.setImageList(imageList, ScaleTypes.FIT)
     }
 
     companion object {
