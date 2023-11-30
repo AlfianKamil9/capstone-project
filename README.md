@@ -75,5 +75,7 @@ Table of API
 | ---    |  ---   | ---  | ---         |
 | `POST` | /api/v1/login | no | email: required;  password: required; |
 | `POST` | /api/v1/register | no | email: required; name: required; familyEmail: required; password: required; confPassword: required,same; |
+| `GET`  | /api/v1/artikel | no | |
+| `GET`  | /api/v1/artikel/{id} | no | |
 ## Deploy to APP Engine 
 ## Deploy to Vertex AI
