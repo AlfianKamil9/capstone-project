@@ -23,6 +23,19 @@ If you want to try this project,
    ```Bash
    npm install
    ```
+3. Add folder config/config.json
+
+   ```Bash
+   {
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "Your-Db-Name",
+    "host": "localhost",
+    "dialect": "mysql"
+    }
+  }
+   ```
 ## Deploy to Compute Engine Instance
 ## Deploy to APP Engine 
 ## Deploy to Vertex AI
