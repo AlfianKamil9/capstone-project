@@ -25,16 +25,16 @@ If you want to try this project,
    ```
 3. Add folder config/config.json
 
-   ```Bash
+   ```Bashline
    {
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "Your-Db-Name",
-    "host": "localhost",
-    "dialect": "mysql"
-    }
-  }
+    "development": {
+      "username": "root",
+      "password": null,
+      "database": "Your-Db-Name",
+      "host": "localhost",
+      "dialect": "mysql"
+      }
+   }
    ```
 ## Deploy to Compute Engine Instance
 ## Deploy to APP Engine 
