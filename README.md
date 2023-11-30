@@ -73,7 +73,7 @@ http://localhost:3000/api-docs
 Table of API
 | Method | Routes | Token | Description |
 | ---    |  ---   | ---  | ---         |
-| `POST` | /api/v1/login | - | email: required,  password: required |
-| `POST` | /api/v1/register | - | email: required,  password: required |
+| `POST` | /api/v1/login | no | email: required;  password: required; |
+| `POST` | /api/v1/register | no | email: required; name: required; familyEmail: required; password: required; confPassword: required,same; |
 ## Deploy to APP Engine 
 ## Deploy to Vertex AI
