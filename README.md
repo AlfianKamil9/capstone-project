@@ -70,5 +70,9 @@ Dokumentasi Sweager API
 ```Bashlink
 http://localhost:3000/api-docs
 ```
+Table of API
+| Method | Routes | Auth | Description |
+| ---    |  ---   | ---  | ---         |
+| `POST` | /api/v1/login | none | email: required, password: required|
 ## Deploy to APP Engine 
 ## Deploy to Vertex AI
