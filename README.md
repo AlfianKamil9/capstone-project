@@ -71,9 +71,9 @@ Dokumentasi Sweager API
 http://localhost:3000/api-docs
 ```
 Table of API
-| Method | Routes | Auth | Description |
+| Method | Routes | Token | Description |
 | ---    |  ---   | ---  | ---         |
-| `POST` | /api/v1/login | none | email: required, 
-password: required|
+| `POST` | /api/v1/login | - | email: required,  password: required |
+| `POST` | /api/v1/register | - | email: required,  password: required |
 ## Deploy to APP Engine 
 ## Deploy to Vertex AI
