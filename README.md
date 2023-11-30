@@ -62,8 +62,8 @@ If you want to try this project,
 6. Run Project 
 
    ```Bashrun
-  npm run start
-  ```
+   npm run start
+   ```
 
 ## Deploy to Compute Engine Instance
 ## Deploy to APP Engine 
