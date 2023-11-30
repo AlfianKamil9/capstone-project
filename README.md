@@ -65,6 +65,10 @@ If you want to try this project,
    npm run start
    ```
 
-## Deploy to Compute Engine Instance
+## API Dokumentasi
+Dokumentasi Sweager API
+```Bashlink
+http://localhost:3000/api-docs
+```
 ## Deploy to APP Engine 
 ## Deploy to Vertex AI
