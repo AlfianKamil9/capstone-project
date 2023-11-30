@@ -2,6 +2,7 @@ const { User } = require('../models');
 const bcrypt = require('bcrypt');
 const validator = require('validator');
 const jwt = require('jsonwebtoken');
+
 require('dotenv').config();
 const tokenBlacklist = new Set();
 
@@ -79,6 +80,23 @@ const login = async (req, res) => {
   return res.status(200).json({ code: 200, message: 'Successfull Login', token: token });
 };
 
+const users = async (req, res) => {
+  const id = req.userData.id;
+  try {
+    const data = await User.findOne({ where: { id: id } });
+    return res.status(200).json({
+      code: 200,
+      message: 'Detail User',
+      data: {
+        name: data.name,
+        email: data.email,
+        familyEmail: data.email,
+      },
+    });
+  } catch (error) {
+    return res.status(500).json({ code: 500, message: 'Error' });
+  }
+};
 
 const logout = async (req, res) => {
   const id = req.userData.id;
@@ -110,4 +128,5 @@ module.exports = {
   register,
   login,
   logout,
+  users,
 };

@@ -22,6 +22,10 @@
       "description": "API Question"
     },
     {
+      "name": "Submit To ML",
+      "description": "API Submit To ML"
+    },
+    {
       "name": "Login",
       "description": "API Login"
     },
@@ -35,7 +39,7 @@
     }
   ],
   "paths": {
-    "/artikel": {
+    "/api/v1/artikel": {
       "get": {
         "tags": ["Artikel"],
         "summary": "Get all Artikel",
@@ -49,7 +53,7 @@
         }
       }
     },
-    "/artikel/{id}": {
+    "/api/v1/artikel/{id}": {
       "get": {
         "tags": ["Artikel"],
         "summary": "Get Detail Artikel",
@@ -77,7 +81,7 @@
         }
       }
     },
-    "/register": {
+    "/api/v1/register": {
       "post": {
         "tags": ["Register"],
         "summary": "Create User",
@@ -111,7 +115,7 @@
         }
       }
     },
-    "/login": {
+    "/api/v1/login": {
       "post": {
         "tags": ["Login"],
         "summary": "Login User",
@@ -142,7 +146,97 @@
         }
       }
     },
-    "/questions": {
+    "/api/v1/submit-quiz": {
+      "post": {
+        "tags": ["Submit To ML"],
+        "summary": "Submit Data ML",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "a1": { "type": "string" },
+                  "a2": { "type": "string" },
+                  "a3": { "type": "string" },
+                  "a4": { "type": "string" },
+                  "a5": { "type": "string" },
+                  "a6": { "type": "string" },
+                  "a7": { "type": "string" },
+                  "a8": { "type": "string" },
+                  "a9": { "type": "string" },
+                  "a10": { "type": "string" }
+                },
+                "required": ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9", "a10"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Semua data harus diisi"
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "201": {
+            "description": "Successfully Submit Quiz"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/v1/submit-quiz/{id}": {
+      "put": {
+        "tags": ["Submit To ML"],
+        "summary": "Submit Data Image ML",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": { "type": "string" }
+                },
+                "required": ["image"]
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "ID Answer"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Semua data harus diisi"
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "200": {
+            "description": "Successfully Submit Quiz"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/v1/questions": {
       "get": {
         "tags": ["Question"],
         "summary": "Get all Question",
@@ -164,7 +258,7 @@
         ]
       }
     },
-    "/logout": {
+    "/api/v1/logout": {
       "delete": {
         "tags": ["Logout"],
         "summary": "  Logout",

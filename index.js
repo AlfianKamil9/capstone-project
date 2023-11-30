@@ -1,16 +1,24 @@
 const express = require('express');
 const routes = require('./routes');
-const app = express();
-const port = 3000;
+const cors = require('cors');
+const bodyParser = require('body-parser');
+//const { loading } = require('./ml');
 
-app.use(routes);
-// try {
-//   DB.authenticate();
-//   console.log('Database connected successfully');
-// } catch (error) {
-//   console.error('Error connecting to database:', error);
-// }
+let model;
+(async () => {
+  // model = await loading();
+  // console.log('Model Successfully Loaded...');
 
-app.listen(port, () => {
-  console.log(`Server running on port http://localhost:${port}`);
-});
+  const app = express();
+  const port = 3000;
+
+  app.use(cors());
+  app.use(bodyParser.json());
+  app.use(routes);
+
+  app.listen(port, () => {
+    console.log(`Server running on port http://localhost:${port}`);
+  });
+})();
+
+module.exports = model;

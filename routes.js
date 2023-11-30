@@ -3,6 +3,7 @@ const router = express.Router();
 const artikelController = require('./controller/artikelController');
 const authController = require('./controller/authController');
 const questionController = require('./controller/questionController');
+const submitToMLController = require('./controller/submitToMLController');
 const jwt = require('jsonwebtoken');
 const sweagerUI = require('swagger-ui-express');
 const apiDocs = require('./apiDocumentation.json');
@@ -34,17 +35,19 @@ const authRules = (req, res, next) => {
 
 // SWAGGER ROUTES DOCS
 router.use('/api-docs', sweagerUI.serve, sweagerUI.setup(apiDocs));
-
 // ROUTES
 router.get('/', (req, res) => {
   res.send('Hello World!');
 });
-router.get('/artikel', artikelController.getArtikels);
-router.get('/artikel/:id', artikelController.getDetailArtikel);
-router.post('/login', authController.login);
-router.post('/register', authController.register);
+router.get('/api/v1/artikel', artikelController.getArtikels);
+router.get('/api/v1/artikel/:id', artikelController.getDetailArtikel);
+router.post('/api/v1/login', authController.login);
+router.post('/api/v1/register', authController.register);
 // AUTH
-router.get('/questions', authRules, questionController);
-router.delete('/logout', authRules, authController.logout);
+router.get('/api/v1/questions', authRules, questionController);
+router.post('/api/v1/submit-quiz', authRules, submitToMLController.submitQuiz);
+// router.put('/submit-quiz/:id', authRules, submitToMLController.submitImage);
+router.get('/api/v1/user', authRules, authController.users);
+router.delete('/api/v1/logout', authRules, authController.logout);
 
 module.exports = router;

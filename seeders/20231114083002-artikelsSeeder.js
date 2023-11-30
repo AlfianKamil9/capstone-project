@@ -7,18 +7,66 @@ module.exports = {
       'Artikels',
       [
         {
-          title: 'Title 1',
-          image: 'http://link.com',
-          subTitle: 'Subtitle Title 1',
-          content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam ut venenatis tellus in metus vulputate eu scelerisque felis. Ut diam quam nulla porttitor massa id neque aliquam. Purus faucibus ornare suspendisse sed nisi lacus sed. Purus sit amet volutpat consequat mauris nunc congue nisi. Mattis molestie a iaculis at erat pellentesque. Sodales neque sodales ut etiam sit amet nisl purus. Congue nisi vitae suscipit tellus mauris. Eget velit aliquet sagittis id consectetur purus ut. Eu feugiat pretium nibh ipsum consequat nisl vel. Viverra aliquet eget sit amet tellus cras. Sem fringilla ut morbi tincidunt augue. Dapibus ultrices in iaculis nunc sed augue lacus viverra. Nulla at volutpat diam ut venenatis tellus in. Vestibulum sed arcu non odio. Et molestie ac feugiat sed lectus.
+          title: 'Mengenal Baby Blues Syndrome: Penyebab, Gejala, dan Cara Mengatasi',
+          image: 'https://storage.googleapis.com/models-mechine-learning-ch2-ps134/image_artikel/mengenal-baby-blues.jpg',
+          subTitle: 'Mengenal Baby Blues Syndrome',
+          content: `
 
-At in tellus integer feugiat scelerisque varius morbi enim nunc. Nisi est sit amet facilisis magna etiam. Viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Nunc consequat interdum varius sit amet mattis vulputate enim. Neque viverra justo nec ultrices. Augue ut lectus arcu bibendum at varius vel. Volutpat lacus laoreet non curabitur gravida arcu. Donec pretium vulputate sapien nec sagittis. Venenatis a condimentum vitae sapien pellentesque habitant. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Gravida cum sociis natoque penatibus et magnis dis parturient montes. Mi ipsum faucibus vitae aliquet nec ullamcorper sit. Placerat vestibulum lectus mauris ultrices eros. Eu nisl nunc mi ipsum.
+          Sindrom baby blues merupakan kondisi psikologis yang muncul pada masa nifas dan dapat menyebabkan depresi dan kecemasan pada ibu. Menurut jurnal ilmiah berjudul How to Cope With Baby Blues: A Case Report dalam Journal of Psychiatry Psychology and Behavioral Research, 50-85 persen ibu mengalami baby blues setelah melahirkan. Umumnya kondisi ini muncul antara hari ke 1-5 dan dapat mereda dalam 10 hari. Meskipun sebagian besar wanita dapat pulih dengan sendirinya tanpa perawatan profesional, ada beberapa wanita yang mengalami kondisi yang lebih serius. Contohnya seperti gangguan kecemasan atau depresi perinatal yang memerlukan perhatian medis. Bila tidak mendapatkan penanganan yang baik, kondisi ini bisa membahayakan kesehatan ibu dan bayi. Baby blues berkaitan dengan perubahan emosional dan fisik yang terjadi saat melahirkan. 
+          Meski lumrah terjadi pada ibu pasca melahirkan, tetapi perasaan sedih, marah, khawatir, cemas, dan sejenisnya perlu mendapat perhatian dari ibu dan ayah agar dapat ditangani dengan baik.
 
-Amet porttitor eget dolor morbi non arcu risus quis varius. Proin fermentum leo vel orci porta non pulvinar neque. Id semper risus in hendrerit gravida rutrum quisque non tellus. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat. Nullam ac tortor vitae purus. Nibh tellus molestie nunc non blandit massa. Venenatis tellus in metus vulputate. Lorem donec massa sapien faucibus. Vel pharetra vel turpis nunc eget lorem dolor. Euismod elementum nisi quis eleifend quam adipiscing. Quam viverra orci sagittis eu volutpat. Mattis pellentesque id nibh tortor id aliquet lectus proin nibh.
+          Penyebab Baby Blues Syndrome
 
-Lectus nulla at volutpat diam ut venenatis. Ut enim blandit volutpat maecenas volutpat blandit. Faucibus turpis in eu mi bibendum neque. Lacus laoreet non curabitur gravida arcu ac tortor dignissim. Lorem ipsum dolor sit amet consectetur. Tincidunt vitae semper quis lectus nulla. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Nisl nisi scelerisque eu ultrices. Hendrerit dolor magna eget est lorem ipsum dolor sit amet. Euismod lacinia at quis risus sed vulputate odio ut enim. Eget est lorem ipsum dolor. Risus feugiat in ante metus dictum at tempor commodo ullamcorper.
+          Walaupun belum diketahui secara pasti, ada beberapa hal yang menjadi penyebab terjadinya baby blues, yaitu:
+          1. Adaptasi menjadi ibu
+          Kesulitan beradaptasi dengan peran baru sebagai seorang ibu juga dapat meningkatkan risiko baby blues. Terutama terjadi jika ibu juga harus melakukan tanggung jawab dengan rutinitas sehari-hari. Kurang tidur juga bisa memicu gejala syndrome baby blues ini, seperti perasaan sedih dan mudah tersinggung. Untuk kamu yang baru jadi ibu, simak artikel Belajar Menjadi Ibu Baru? Ini 7 Tips yang Bisa Ibu Tiru agar bisa membantumu menjalani keseharian sebagai ibu bagi sang buah hati
+          2. Perubahan hormon
+          Setelah melahirkan, ada perubahan hormon di dalam tubuh yang memengaruhi perasaan atau suasana hati ibu. Penurunan kadar estrogen dan progesteron atau hormon lainnya yang diproduksi kelenjar tiroid, dapat menyebabkan ibu menjadi mudah lelah, perubahan emosi, hingga depresi.
+          3. Kelelahan dan kurangnya istirahat
+          Perasaan depresi juga bisa muncul akibat perubahan pola tidur selama masa merawat bayi. Selain itu, kurangnya dukungan baik dari keluarga atau lingkungan sekitar, juga bisa memicu terjadinya syndrome baby blues. Alhasil, kondisi ini bisa membuat ibu kelelahan karena kurang istirahat. Untuk bisa menjaga kebugaran tubuh, diperlukan olahraga yang bisa membuat badan lebih sehat dan tidak mudah lelah. Artikel yang membahas 5 Jenis Olahraga yang bisa Dilakukan bersama Balita bisa kamu baca di sin
+          4. Memiliki riwayat masalah mental
+          Beberapa masalah mental yang bisa memicu syndrome baby blues adalah gangguan kecemasan, mengidap stres sebelumnya, ataupun bipolar. 
+          
+          Gejala Baby Blues Syndrome 
+          
+          Baby blues pada ibu bisa muncul dengan beberapa gejala, seperti:
+          1. Muncul rasa sedih yang menyebabkan ibu menangis dan merasa depresi. Jadi, bila kamu pernah bertanya-tanya mengapa ibu baru melahirkan sering menangis? Mungkin saja ibu tersebut mengalami sindrom baby blues. Tidak hanya sering menangis, ibu yang mengalami kondisi tersebut pun akan mudah merasa cemas, mudah tersinggung, bahkan tidak memperhatikan keadaan anak atau takut menyentuh anak.
+          2. Emosi labil dan mudah marah
+          Setelah melahirkan, tubuh seorang ibu mengalami perubahan hormon yang signifikan. Hormon seperti estrogen, progesteron, dan hormon tiroid dapat berfluktuasi dengan cepat. 
+          Perubahan ini dapat memengaruhi suasana hati dan emosi, menyebabkan ibu merasa lebih sensitif, mudah marah, dan cenderung mengalami perubahan emosi yang ekstrem.
+          3. Merasa kelelahan, sulit tidur dan sering sakit kepala
+          Perawatan bayi yang intensif, kurangnya tidur yang cukup, dan perubahan gaya hidup yang signifikan dapat menyebabkan tingkat stres dan kelelahan yang tinggi pada seorang ibu. Kelelahan yang berlebihan dapat memengaruhi keseimbangan emosi dan membuat ibu lebih cepat merasa lelah dan sakit kepala.
+          4. Merasa kurang percaya diri dan muncul kecemasan
+          Melahirkan membawa perubahan besar dalam hidup seorang wanita. Ibu baru harus beradaptasi dengan peran dan tanggung jawab baru sebagai seorang ibu, yang dapat memengaruhi identitas dan keseimbangan emosionalnya. Perasaan ketidakpastian, rasa tidak mampu, tidak percaya diri, atau merasa kewalahan dengan tanggung jawab baru dapat menyebabkan ketegangan emosional dan perasaan takut yang tidak beralasan.
+          5. Kecemasan dan ketakutan yang tidak beralasan
+          Ibu yang mengalami baby blues syndrome sering merasakan kecemasan dan ketakutan yang tidak beralasan terkait perawatan dan kehidupan bayinya. Ibu mungkin merasa cemas berlebihan tentang keselamatan dan kesehatan bayi, bahkan jika tidak ada alasan nyata yang mengindikasikan adanya ancaman.
+          
+          Namun, tidak hanya bisa terjadi pada ibu, sindrom tersebut juga bisa terjadi pada ayah. Lantas, baby blues syndrome bisa berlangsung sampai bayi umur berapa? Umumnya, sindrom ini hanya berlangsung sementara, yaitu sekitar dua hari sampai tiga minggu sejak kelahiran bayi. 
 
-Amet risus nullam eget felis eget nunc. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Aliquam purus sit amet luctus venenatis lectus. Amet mauris commodo quis imperdiet. Rhoncus urna neque viverra justo nec ultrices. Tincidunt ornare massa eget egestas purus. A cras semper auctor neque vitae tempus quam pellentesque. A condimentum vitae sapien pellentesque habitant morbi tristique senectus. Et odio pellentesque diam volutpat. Viverra orci sagittis eu volutpat odio. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Velit euismod in pellentesque massa placerat duis ultricies. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna.`,
+          Cara Mengatasi Baby Blues Syndrome
+          
+          Munculnya sindrom baby blues memang umum terjadi pada ibu usai melahirkan. Namun ini bisa memberikan dampak negatif tidak hanya bagi ibu, tapi juga bayi yang baru lahir. Bagaimana cara mengatasi ibu yang mengalami baby blues?
+          1. Pola makan sehat 
+          Mengonsumsi makanan dalam interval teratur dan mencukupi kebutuhan energi tubuh dapat membantu menjaga kadar gula darah tetap stabil. Kelaparan dan hipoglikemia (kadar gula darah rendah) dapat memengaruhi suasana hati dan menyebabkan perubahan emosi yang drastis. 
+          2. Istirahat cukup
+          Menurut studi berjudul The Baby Blues and Postnatal Depression yang dalam Andalas Journal of Public Health, istirahat yang cukup dan membiarkan ibu mengeluarkan isi hatinya, dapat mencegah syndrome baby blues yang berkepanjangan.
+          3. Mencari banyak informasi seputar persalinan 
+          Ini penting agar ibu tidak merasa “kaget” saat mulai merawat Si Kecil. Bicarakan dengan dokter mengenai cara merawat Si Kecil sekaligus menjaga kesehatannya. Ketika ibu tahu cara dan siap merawat Si Kecil, maka syndrome baby blues  pun dapat ibu hindari.
+          4. Berbagi beban bersama pasangan atau keluarga
+          Ini merupakan cara terbaik untuk menghindari sindrom pasca melahirkan. Bicarakan masalah merawat Si Kecil serta berbagi tanggung jawab dengan pasangan dapat meringankan beban ibu, baik secara fisik maupun psikis.
+          5. Bergabung dengan komunitas 
+          Menurut jurnal ilmiah berjudul How to Cope with Baby Blues: A Case Report di Journal of Psychiatry Psychology and Behavioral Research, dukungan support system pada ibu saat hamil dan setelah melahirkan akan mencegah terjadinya baby blues syndrome. Berbagi pengalaman dengan ibu-ibu lain melalui komunitas online ataupun dengan sahabat yang juga seorang ibu, dapat memberikan rasa lega dan mengurangi beban emosional yang ibu rasakan.
+          6. Lakukan ‘me time’
+          Ketika pikiran dan perasaan sudah mumet, luangkanlah waktu untuk diri sendiri. Mintalah seseorang untuk menjaga bayi supaya kamu bisa keluar rumah. Entah itu mendapatkan sinar matahari, jalan sore, atau pergi ke mall, sekadar untuk ‘me time’ dan menenangkan diri. Menurut jurnal ilmiah berjudul Fenomena Postpartum Blues pada Primipara (Ibu dengan Kelahiran Bayi Pertama), dalam Jurnal Kesehatan Mahardika, menitipkan anak sementara waktu dan melakukan aktivitas yang disenangi dapat mengatasi baby blues syndrome.
+          7. Berpikir positif 
+          Berpikir positif dapat membantu meningkatkan kesejahteraan emosional ibu. Fokus pada pikiran-pikiran positif dan memahami bahwa gejala syndrome baby blues adalah hal yang wajar dan akan berlalu, dapat membantu ibu menghadapi fase ini dengan lebih baik.
+          8. Rutin berolahraga
+          Olahraga dapat menjadi salah satu cara ibu mengatasi baby blues syndrome. Dengan rutin beraktivitas fisik emosi ibu bisa terkuras di sana, pun ibu bisa mengalihkan perasaan sedih dan cemas dengan mengolah fisik. Olahraga juga bisa membuat mood menjadi lebih positif.
+          9. Konsultasi dengan dokter
+          Jika memang sudah tidak bisa ditangani lagi, berkonsultasi dengan dokter adalah pilihan tepat untuk mengatasi baby blues syndrome. Dokter dapat merekomendasikan terapi ataupun pengobatan medis yang tepat, sehingga ibu bisa menjadi lebih sehat dan berpikir positif.
+          
+        
+          `,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
