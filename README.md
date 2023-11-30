@@ -75,7 +75,10 @@ Table of API
 | ---    |  ---   | ---  | ---         |
 | `POST` | /api/v1/login | no | email: required;  password: required; |
 | `POST` | /api/v1/register | no | email: required; name: required; familyEmail: required; password: required; confPassword: required,same; |
+| `POST` | /api/v1/submit-quiz | required | a1: required; a2: required; a3: required; a4: required; a5: required; a6: required; a7: required; a8: required; a9: required; a10: required;|
 | `GET`  | /api/v1/artikel | no | |
 | `GET`  | /api/v1/artikel/{id} | no | |
+| `GET` | /api/v1/questions | required | |
+| `DELETE` | /api/v1/logout | required | |
 ## Deploy to APP Engine 
 ## Deploy to Vertex AI
