@@ -36,6 +36,12 @@ If you want to try this project,
       }
    }
    ```
+4. Add file .env
+
+   ```Bashenv
+   # SECRET TOKEN
+   TOKEN=Your-Token
+   ```
 ## Deploy to Compute Engine Instance
 ## Deploy to APP Engine 
 ## Deploy to Vertex AI
