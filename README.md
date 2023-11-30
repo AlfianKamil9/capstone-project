@@ -44,22 +44,27 @@ If you want to try this project,
    ```
 
 5. Generate database
+   
   ```Bashdb
   # Generate Table from Model & Migration
   npx sequelize-cli db:migrate
+
   # Generate data seeders
   npx sequelize-cli db:seed:all
 
   # Delete Table
   npx sequelize-cli db:migrate:undo
+
   # Delete Table
   npx sequelize-cli db:seed:undo:all
   ```
 
 6. Run Project 
-```Bashrun
+
+   ```Bashrun
   npm run start
-```
+  ```
+
 ## Deploy to Compute Engine Instance
 ## Deploy to APP Engine 
 ## Deploy to Vertex AI
