@@ -16,7 +16,7 @@ If you want to try this project,
 1. Clone this project
    
    ```Clone
-   git clone https://github.com/AlfianKamil9/capstone-project.git
+   git clone -b main https://github.com/AlfianKamil9/capstone-project.git
    ````
 2. Install dependencies
 
@@ -42,6 +42,24 @@ If you want to try this project,
    # SECRET TOKEN
    TOKEN=Your-Token
    ```
+
+5. Generate database
+  ```Bashdb
+  # Generate Table from Model & Migration
+  npx sequelize-cli db:migrate
+  # Generate data seeders
+  npx sequelize-cli db:seed:all
+
+  # Delete Table
+  npx sequelize-cli db:migrate:undo
+  # Delete Table
+  npx sequelize-cli db:seed:undo:all
+  ```
+
+6. Run Project 
+```Bashrun
+  npm run start
+```
 ## Deploy to Compute Engine Instance
 ## Deploy to APP Engine 
 ## Deploy to Vertex AI
