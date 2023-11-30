@@ -1,9 +1,8 @@
-const Artikels = require('../models/Artikels');
-
+const { Artikel } = require('../models');
 // GET ARTIKEL
 const getArtikels = async (req, res) => {
   try {
-    const data = await Artikels.findAll();
+    const data = await Artikel.findAll();
     return res.status(200).json({
       code: 200,
       message: 'Success Get Data Artikel',
@@ -21,7 +20,7 @@ const getArtikels = async (req, res) => {
 const getDetailArtikel = async (req, res) => {
   try {
     const { id } = req.params;
-    const dataId = await Artikels.findOne({ where: { id: id } });
+    const dataId = await Artikel.findOne({ where: { id: id } });
     if (dataId) {
       return res.status(200).json({
         code: 200,
