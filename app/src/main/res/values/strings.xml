@@ -13,6 +13,8 @@
     <string name="bsignup">Signup</string>
     <string name="blogin">Login</string>
     <string name="bgoogleLogin">Sign in with Google</string>
+    <string name="binfo">About App</string>
+    <string name="blogout">Log Out</string>
 
     // hint
     <string name="hEmail">Email</string>
@@ -28,6 +30,19 @@
     <string name="tsignupPage">Complete your data</string>
     <string name="thello">Hello, </string>
     <string name="thomePage">We wish you have a good day 😊</string>
+
+    //about app
+    <string name="aaplikasi">Becare is a mobile application to detect a person in order to know and be able to prevent the occurrence of Baby Blues. It can prevent infant death and abuse. And the user\'s immediate family can use the app to get information related to the user\'s mental health.</string>
+    <string name="atim">Capstone Team CH2-PS134</string>
+    <string name="bangkit">Bangkit Academy 2023 Batch 2</string>
+    <string name="aanggota">Nama Anggota Tim:</string>
+    <string name="agil">M463BSY1446 –  Agil Yudha Tri Anggara - Universitas PGRI Madiun</string>
+    <string name="dimas">M006BSY0071 – Mochamad Dimas Putra Hermawan – Universitas Brawijaya</string>
+    <string name="azmi">M674BSY0865 – Nur Azmi Hidayat – Universitas Borneo Tarakan</string>
+    <string name="rifqi">C006BSY4334 – Rifqi Alfiansyah Kamil – Universitas Brawijaya</string>
+    <string name="david">C006BSY3443 – David Kurniawan – Universitas Brawijaya</string>
+    <string name="mulia">A694BSX2079 – Mulia Sahpira – Universitas Multi Data Palembang</string>
+    <string name="dwiky">A132BSY2461 - Muhammad Dwiky Alfira - Politeknik Negeri Padang</string>
 
     //label
     <string name="lHome">Home</string>
