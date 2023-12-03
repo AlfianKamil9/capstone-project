@@ -10,7 +10,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -99,7 +99,7 @@
         android:id="@+id/scrollViewResult"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -150,8 +150,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/result"
-                android:textSize="32sp"
+                android:text="@string/resultnya"
+                android:textSize="33sp"
                 android:fontFamily="@font/extraboldoppins"
                 app:layout_constraintTop_toBottomOf="@id/txtResult"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -173,7 +173,7 @@
                 android:id="@+id/tvSuggestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/result"
+                android:text="@string/suggestionnya"
                 android:textSize="15sp"
                 android:fontFamily="@font/mediumpoppins"
                 app:layout_constraintTop_toBottomOf="@id/txtSuggestion"
