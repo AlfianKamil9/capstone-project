@@ -31,7 +31,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tlUsernameLogin"
+        android:id="@+id/tlEmailLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -39,14 +39,14 @@
         app:layout_constraintTop_toBottomOf="@+id/tvLogin">
 
         <EditText
-            android:id="@+id/etUsernameLogin"
+            android:id="@+id/etEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hUsername"
+            android:hint="@string/hEmail"
             android:fontFamily="@font/regularpoppins"
             android:inputType="text"
             android:padding="10dp"
-            android:drawableStart="@drawable/ic_person"
+            android:drawableStart="@drawable/ic_email"
             android:drawablePadding="10dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints"
         app:passwordToggleEnabled="true"
-        app:layout_constraintTop_toBottomOf="@+id/tlUsernameLogin">
+        app:layout_constraintTop_toBottomOf="@+id/tlEmailLogin">
 
         <EditText
             android:id="@+id/etPasswordLogin"
@@ -97,5 +97,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tlPasswordLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBarLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/blue"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

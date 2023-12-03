@@ -15,6 +15,8 @@
     <string name="bgoogleLogin">Sign in with Google</string>
     <string name="binfo">About App</string>
     <string name="blogout">Log Out</string>
+    <string name="bupload">Upload</string>
+    <string name="bscanface">Scan Face</string>
 
     // hint
     <string name="hEmail">Email</string>
@@ -30,6 +32,14 @@
     <string name="tsignupPage">Complete your data</string>
     <string name="thello">Hello, </string>
     <string name="thomePage">We wish you have a good day 😊</string>
+    <string name="invalid">Please enter the correct data</string>
+    <string name="notesScan">Notes: </string>
+    <string name="isiNotes">Please enter a face-on selfie photo. So,that the app can predict the expression correctly.</string>
+    <string name="rangeResult">Range of results : Safe, Medium, Acute </string>
+    <string name="result">Result: </string>
+    <string name="resultnya">Resultnya</string>
+    <string name="suggestion">Suggestions: </string>
+    <string name="suggestionnya">Suggestionnya</string>
 
     //about app
     <string name="aaplikasi">Becare is a mobile application to detect a person in order to know and be able to prevent the occurrence of Baby Blues. It can prevent infant death and abuse. And the user\'s immediate family can use the app to get information related to the user\'s mental health.</string>

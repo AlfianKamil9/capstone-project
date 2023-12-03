@@ -1,17 +1,684 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.quiz.QuizActivity">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quiz Page"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvSoal1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Saya tidak mampu tertawa dan melihat sisi lucu dari hal-hal sekitar saya"
+            android:textSize="20sp"
+            android:fontFamily="@font/boldpoppins"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/rg_soal1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvSoal1">
+
+            <RadioButton
+                android:id="@+id/a_soal1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/b_soal1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sebagian waktu"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/c_soal1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak terlalu sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/d_soal1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak sama sekali"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/tvSoal2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Saya tidak bisa melihat hal yang baik untuk masa yang akan datang"
+            android:textSize="20sp"
+            android:fontFamily="@font/boldpoppins"
+            app:layout_constraintTop_toBottomOf="@+id/rg_soal1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/rg_soal2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvSoal2">
+
+            <RadioButton
+                android:id="@+id/a_soal2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/b_soal2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sebagian waktu"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/c_soal2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak terlalu sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/d_soal2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak sama sekali"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvSoal3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Saya selalu menyalahkan diri saya untuk hal-hal kecil"
+            android:textSize="20sp"
+            android:fontFamily="@font/boldpoppins"
+            app:layout_constraintTop_toBottomOf="@+id/rg_soal2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/rg_soal3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvSoal3">
+
+            <RadioButton
+                android:id="@+id/a_soal3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/b_soal3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sebagian waktu"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/c_soal3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak terlalu sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/d_soal3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak sama sekali"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvSoal4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Saya terlalu cemas dan khawatir tanpa alasan"
+            android:textSize="20sp"
+            android:fontFamily="@font/boldpoppins"
+            app:layout_constraintTop_toBottomOf="@+id/rg_soal3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/rg_soal4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvSoal4">
+
+            <RadioButton
+                android:id="@+id/a_soal4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/b_soal4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sebagian waktu"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/c_soal4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak terlalu sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/d_soal4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak sama sekali"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvSoal5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Saya merasa takut atau panik tanpa alasan yang sangat baik"
+            android:textSize="20sp"
+            android:fontFamily="@font/boldpoppins"
+            app:layout_constraintTop_toBottomOf="@+id/rg_soal4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/rg_soal5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvSoal5">
+
+            <RadioButton
+                android:id="@+id/a_soal5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/b_soal5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sebagian waktu"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/c_soal5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak terlalu sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/d_soal5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak sama sekali"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvSoal6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Saya merasa keadaan sekitar saya sudah mulai tak bisa saya atasi"
+            android:textSize="20sp"
+            android:fontFamily="@font/boldpoppins"
+            app:layout_constraintTop_toBottomOf="@+id/rg_soal5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/rg_soal6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvSoal6">
+
+            <RadioButton
+                android:id="@+id/a_soal6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/b_soal6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sebagian waktu"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/c_soal6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak terlalu sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/d_soal6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak sama sekali"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvSoal7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Saya sangat tidak bahagia sampai sya memiliki kesulitan tidur"
+            android:textSize="20sp"
+            android:fontFamily="@font/boldpoppins"
+            app:layout_constraintTop_toBottomOf="@+id/rg_soal6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/rg_soal7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvSoal7">
+
+            <RadioButton
+                android:id="@+id/a_soal7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/b_soal7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sebagian waktu"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/c_soal7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak terlalu sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/d_soal7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak sama sekali"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvSoal8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Saya merasa sedih atau sengsara"
+            android:textSize="20sp"
+            android:fontFamily="@font/boldpoppins"
+            app:layout_constraintTop_toBottomOf="@+id/rg_soal7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/rg_soal8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvSoal8">
+
+            <RadioButton
+                android:id="@+id/a_soal8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/b_soal8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sebagian waktu"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/c_soal8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak terlalu sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/d_soal8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak sama sekali"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvSoal9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Saya tidak bahagia sampai-sampai saya menangis"
+            android:textSize="20sp"
+            android:fontFamily="@font/boldpoppins"
+            app:layout_constraintTop_toBottomOf="@+id/rg_soal8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/rg_soal9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvSoal9">
+
+            <RadioButton
+                android:id="@+id/a_soal9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/b_soal9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sebagian waktu"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/c_soal9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak terlalu sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/d_soal9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak sama sekali"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvSoal10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Pikiran untuk melukai diri sempat terlintas dii pikiran saya"
+            android:textSize="20sp"
+            android:fontFamily="@font/boldpoppins"
+            app:layout_constraintTop_toBottomOf="@+id/rg_soal9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/rg_soal10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvSoal10">
+
+            <RadioButton
+                android:id="@+id/a_soal10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/b_soal10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Ya, Sebagian waktu"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/c_soal10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak terlalu sering"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+
+            <RadioButton
+                android:id="@+id/d_soal10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Tidak sama sekali"
+                android:textSize="13sp"
+                android:fontFamily="@font/mediumpoppins"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnScanFace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="55dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/blue2"
+            android:background="@drawable/bg_corner"
+            android:text="@string/bscanface"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:fontFamily="@font/extraboldoppins"
+            app:layout_constraintTop_toBottomOf="@id/rg_soal10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
