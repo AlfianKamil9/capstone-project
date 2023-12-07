@@ -38,9 +38,14 @@ function predict(model, input) {
 
 function predictImage(model, input) {
   try {
-    const tensor = tfjs.node.decodeJpeg(input).resizeNearestNeighbor([200, 200]).expandDims().toFloat();
-    console.log(tensor);
-    return model.predict(tensor).data();
+    const tensor = tfjs.node.decodeImage(input).resizeNearestNeighbor([200, 200]).mean(2).expandDims(2);
+    const tensor2= tensor.toFloat().div(tfjs.scalar(255));
+    const tensor3= tensor2.expandDims(0);
+    console.log(tensor3);
+    const arg = model.predict(tensor3);
+    console.log(arg);
+    const argIndex = arg.argMax(1).data();
+    return argIndex;
   } catch (error) {
     console.log(error);
   }
