@@ -1,11 +1,11 @@
 // index.js
 const express = require('express');
 const multer = require('multer');
+const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
 const { loadModel, predict, loadModelImage, predictImage } = require('./ml'); // Sesuaikan dengan path yang benar
 (async () => {
-  const kondisi = ['Aman', 'Depresi Ringan', 'Kemungkinan Depresi', 'Depresi Berat'];
-  const model = await loadModel();
+  const modelForm = await loadModel();
   console.log('Model for Quiz Successfully loaded');
   const modelImage = await loadModelImage();
   console.log('Model for Image Successfully loaded');
@@ -31,35 +31,34 @@ const { loadModel, predict, loadModelImage, predictImage } = require('./ml'); //
 
   app.use(token);
 
-  app.post('/predict-form', async (req, res) => {
-    const { input } = req.body;
+  app.post('/predict', async (req, res) => {
+    // tangkap request body
+    const { input, answerForm } = req.body;
+    const image = await fetch(input);
 
-    // Lakukan prediksi menggunakan fungsi predict
-    const result = await predict(model, input);
-    console.log(result);
-    console.log(result[0]);
-    return res
-      .json({
-        code: 200,
-        message: 'Complete predict form',
-        data: kondisi[result[0]],
-      })
-      .status(201);
-  });
+    // ambil gambar dari url
+    const inputImage = await image.buffer();
+    const inputForm = answerForm;
+    console.log('Input Image :', inputImage, ' , ', 'Input Form :', inputForm);
 
-  app.post('/predict-image', upload.single('file'), async (req, res) => {
-    const image = req.file.buffer;
-    console.log(image);
-    const result = await predictImage(modelImage, image);
+    // Predict Image
+    const result = await predict(modelImage, modelForm, inputImage, inputForm);
     console.log(result);
-    console.log(result[0]);
-    return res
-      .json({
-        code: 200,
-        message: 'Complete predict image',
-        data: kondisi[result[0]],
-      })
-      .status(201);
+
+    if (result) {
+      return res
+        .json({
+          code: 200,
+          message: 'Complete predict image',
+          data: result,
+        })
+        .status(200);
+    }
+
+    res.status(500).json({
+      code: 500,
+      message: 'Error predict',
+    });
   });
 
   // Jalankan server pada port tertentu
