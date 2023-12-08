@@ -7,7 +7,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.bcare.bcareapp.R
+import com.bcare.bcareapp.ui.login.LoginActivity
 import com.bcare.bcareapp.ui.main.MainActivity
+import com.bcare.bcareapp.ui.welcome.WelcomeActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -16,9 +18,8 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         supportActionBar?.hide()
-        Handler(Looper.getMainLooper()).postDelayed(
-            {
-            val intent = Intent(this@SplashActivity, MainActivity::class.java)
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this@SplashActivity, WelcomeActivity::class.java)
             startActivity(intent)
             finish()
         }, 1950)

@@ -66,6 +66,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bcare_app_name">Bcare app name</string>
+    <string name="bcare_welcome_image">Bcare welcome image</string>
 
 
 </resources>
