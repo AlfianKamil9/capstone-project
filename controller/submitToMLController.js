@@ -1,9 +1,13 @@
-//const { Answer } = require('../models');
-const { predict, loadModel } = require('../ml');
+const { Answer } = require('../models');
+//const { Storage } = require('@google-cloud/storage');
+const axios = require('axios');
+const process = require('process');
 
+// INISIASI CLOUD STORAGE
+
+// CONTROLLER SUBMIT QUIZ
 const submitQuiz = async (req, res) => {
-  const model = await loadModel();
-  console.log('model Loaded');
+  const userId = req.userData.id;
   const { a1, a2, a3, a4, a5, a6, a7, a8, a9, a10 } = req.body;
   const allVariablesNotNull = a1 !== null && a2 !== null && a3 !== null && a4 !== null && a5 !== null && a6 !== null && a7 !== null && a8 !== null && a9 !== null && a10 !== null;
   //cek variabel terisi atau tidak
@@ -13,8 +17,7 @@ const submitQuiz = async (req, res) => {
       message: 'Semua data harus diisi.',
     });
   }
-  // array
-  const arrayMap = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10].map((e) => {
+  const input = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10].map((e) => {
     switch (e.toLowerCase()) {
       case 'a':
         return 0;
@@ -26,58 +29,105 @@ const submitQuiz = async (req, res) => {
         return 3;
     }
   });
-  console.log('Array yang mau dikirim :', arrayMap);
-  const result = await predict(model, arrayMap);
-  // jika kosong
-  if (!result) {
-    return res.json({
+  const jsonString = JSON.stringify(input);
+  console.log(jsonString);
+  try {
+    // const url = process.env.ML_URL + '/predict-form';
+    // const request = await axios.post(url, input1, {
+    //   headers: {
+    //     Authorization: `Baerer ${process.env.ML_KEY}`,
+    //     'Content-Type': 'application/json',
+    //   },
+    // });
+    // const result = request.data;
+    // console.log(result);
+
+    const sendAnswer = await Answer.create({
+      userId: userId,
+      answerForm: jsonString,
+      answerImage: 0,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    });
+
+    // cek response
+    if (sendAnswer) {
+      return res.status(200).json({
+        code: 200,
+        message: 'Berhasil Maukin List Jawaban',
+      });
+    }
+    return res.status(500).json({
       code: 500,
-      message: 'error',
+      message: 'Server Error',
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      code: 500,
+      message: 'Server Error',
     });
   }
-  // get prediction result
-  console.log('Prediksi : ', result);
-  return res.json({
-    code: 200,
-    message: result,
-  });
 };
 
-//
-// const submitImage = async (req, res) => {
-//   const { id } = req.params;
-//   const { image } = req.body;
+// SUBMIT IMAGE
+const submitImage = async (req, res) => {
+  const data = req.body;
+  if (req.file && req.file.cloudStoragePublicUrl) {
+    data.imageUrl = req.file.cloudStoragePublicUrl;
+  }
 
-//   // cek image
-//   if (!image) {
-//     return res.status(400).json({
-//       code: 400,
-//       message: 'Data image harus diisi.',
-//     });
-//   }
-//   try {
-//     Answer.update(
-//       {
-//         image: image,
-//       },
-//       {
-//         returning: true,
-//         where: { userId: req.userData.id, id: id },
-//       }
-//     );
-//     return res.status(200).json({
-//       code: 200,
-//       message: 'Submit Image Ok',
-//     });
-//   } catch (error) {
-//     return res.status(500).json({
-//       code: 500,
-//       message: error.message,
-//     });
-//   }
-// };
+  // mendapatkan answerForm untuk diproses
+  const userId = req.userData.id;
+  const allData = await Answer.findAll({
+    where: {
+      userId: userId,
+    },
+    order: [['id', 'DESC']],
+  });
+
+  // DEFINISI NILAI ANSWER FORM
+  const answerForm = JSON.parse(allData[0].answerForm);
+  console.log('nilai answerForm dari db:', answerForm);
+
+  // DEFINISI IMAGE
+  const input = data.imageUrl;
+
+  // DEFINISI KIRIMAN ANSWER DAN IMAGE
+  const inputBahan = { input, answerForm };
+  console.log(inputBahan);
+
+  // MENDEFINISIKAN TRY CATCH
+  try {
+    const url = process.env.ML_URL + '/predict';
+    const request = await axios.post(url, inputBahan, {
+      headers: {
+        Authorization: `Baerer ${process.env.ML_KEY}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    const result = request.data;
+    if (result.code == 200) {
+      res.status(200).json({
+        code: 200,
+        message: result.message,
+        data: result.data,
+      });
+    }
+    return res.status(500).json({
+      code: 500,
+      message: result.message,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      code: 500,
+      message: 'Internal Server Error',
+    });
+  }
+};
 
 module.exports = {
   submitQuiz,
-  // submitImage,
+  submitImage,
 };

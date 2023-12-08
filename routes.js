@@ -1,10 +1,21 @@
 const express = require('express');
+const Multer = require('multer');
 const router = express.Router();
 const artikelController = require('./controller/artikelController');
 const authController = require('./controller/authController');
 const questionController = require('./controller/questionController');
 const submitToMLController = require('./controller/submitToMLController');
 const jwt = require('jsonwebtoken');
+const ImgUpload = require('./module/imgUpload');
+
+// kONFIGURASI MULTER
+const upload = Multer({
+  storage: Multer.memoryStorage(),
+  limits: {
+    fileSize: 5 * 1024 * 1024, // Batas ukuran file (5 MB dalam contoh ini)
+  },
+});
+
 const sweagerUI = require('swagger-ui-express');
 const apiDocs = require('./apiDocumentation.json');
 router.use(express.json()); // for parsing application/json
@@ -46,7 +57,7 @@ router.post('/api/v1/register', authController.register);
 // AUTH
 router.get('/api/v1/questions', authRules, questionController);
 router.post('/api/v1/submit-quiz', authRules, submitToMLController.submitQuiz);
-// router.put('/submit-quiz/:id', authRules, submitToMLController.submitImage);
+router.post('/api/v1/submit-image', authRules, upload.single('file'), ImgUpload.uploadToGcs, submitToMLController.submitImage);
 router.get('/api/v1/user', authRules, authController.users);
 router.delete('/api/v1/logout', authRules, authController.logout);
 
