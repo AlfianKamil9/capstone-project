@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lovemom" />
+        app:srcCompat="@drawable/lovemom"
+        android:contentDescription="@string/bcare_welcome_image" />
 
     <ImageView
         android:id="@+id/ivBcare"
@@ -23,7 +24,8 @@
         app:layout_constraintTop_toBottomOf="@id/ivWelcome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bcare" />
+        app:srcCompat="@drawable/bcare"
+        android:contentDescription="@string/bcare_app_name" />
 
     <TextView
         android:id="@+id/tvWelcome"

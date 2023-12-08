@@ -3,19 +3,24 @@ package com.bcare.bcareapp.data.local.repository
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
+import com.bcare.bcareapp.data.local.preference.UserPreference
 import com.bcare.bcareapp.data.local.result.Result
 import com.bcare.bcareapp.data.remote.response.login.LoginResponse
 import com.bcare.bcareapp.data.remote.response.register.RegisterResponse
 import com.bcare.bcareapp.data.remote.retrofit.ApiService
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.emitAll
+import kotlinx.coroutines.flow.flow
+import java.util.prefs.Preferences
 
-class Repository private constructor(
-    private val apiService: ApiService){
+class UserRepository(
+    private val apiService: ApiService) {
 
-
-    fun userLogin(
+    fun postLogin(
         email: String,
         password: String
     ): LiveData<Result<LoginResponse>> = liveData {
+        emit(Result.Loading)
         try {
             val client = apiService.postLogin(email, password)
             emit(Result.Success(client))
@@ -25,7 +30,7 @@ class Repository private constructor(
         }
     }
 
-    fun userRegister(
+    fun postRegister(
         email: String,
         name: String,
         familyName: String,
@@ -33,12 +38,31 @@ class Repository private constructor(
         confPassword: String
     ): LiveData<Result<RegisterResponse>> = liveData {
         try {
-            val client = apiService.postRegister(email, name, familyName, password, confPassword)
-            emit(Result.Success(client))
+            val response = apiService.postRegister(email, name, familyName, password, confPassword)
+            emit(Result.Success(response))
         } catch (e: Exception) {
             Log.e("RegisterViewModel", "userRegister: ${e.message.toString()}")
             emit(Result.Error(e.message.toString()))
         }
     }
+
+//    fun  userLogout(): Flow<Result<String>> = flow {
+//        emit(Result.Loading)
+//        userPreference.logout()
+//        emit(Result.Success("Success"))
+//    }
+
+//    fun getDataUser(
+//        token = String
+//    ): Flow<Result<Data>
+
+//    companion object {
+//        private var instance: UserRepository? = null
+//        fun getInstace(
+//            apiService: ApiService, userPreference: UserPreference
+//        ): UserRepository = instance ?: synchronized(this) {
+//            instance ?: UserRepository(apiService, userPreference)
+//        }.also { instance = it }
+//    }
 
 }
