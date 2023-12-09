@@ -49,7 +49,7 @@ If you want to try this project,
    ```Bash
    npm install
    ```
-3. Add folder config/config.json
+3. Add folder `config/config.json`
 
    ```Bashline
    {
@@ -62,7 +62,7 @@ If you want to try this project,
       }
    }
    ```
-4. Add file .env
+4. Add file `.env`
 
    ```Bashenv
    # APP
@@ -91,7 +91,7 @@ If you want to try this project,
    DB_PASSWORD=
    ```
 
-5. Generate database
+5. Generate Database
    
    ```Bashdb
    # Generate Table from Model & Migration
