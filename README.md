@@ -65,8 +65,30 @@ If you want to try this project,
 4. Add file .env
 
    ```Bashenv
+   # APP
+   APP_NAME=CAPSTONE_PROJECT
+   APP_URL=http://localhost
+   APP_PORT=3000
+   APP_ENV=local
+   
    # SECRET TOKEN
-   TOKEN=Your-Token
+   TOKEN=YOUR-SECRET-TOKEN
+   
+   #SECRET KEY ACCESS ML LOAD MODEL
+   ML_KEY=capstone-project-machine-learning
+   ML_URL=http://localhost:5000
+   
+   #KONFIGURASI GOOGLE CLOUD BUCKET
+   PROJECT_ID=YOUR-PROJECT-ID
+   BUCKET_NAME=YOUR-BUCKET-NAME
+   
+   # DATABASE
+   DB_CONNECTION=mysql
+   DB_HOST=localhost
+   DB_PORT=3306
+   DB_DATABASE=capstone_project
+   DB_USERNAME=root
+   DB_PASSWORD=
    ```
 
 5. Generate database
@@ -85,7 +107,27 @@ If you want to try this project,
    npx sequelize-cli db:seed:undo:all
    ```
 
-6. Run Project 
+6. Add serviceaccountkey.json from your service account
+
+   ```bash
+   #Example - Please Change with your serviceaccountkey
+
+   {
+     "type": "service_account",
+     "project_id": "YOUR-PROJECT-ID",
+     "private_key_id": "YOUR-PRIVATE-KEY-ID",
+     "private_key": "-----BEGIN PRIVATE KEY-----FINISH PRIVATE KEY-----"
+     "client_email": "---CLIENT-EMAIL---",
+     "client_id": "------CLIENT-ID------",
+     "auth_uri": "------AUTH-URI------",
+     "token_uri": "-----TOKEN-URI-----",
+     "auth_provider_x509_cert_url": "-----AUTH-PROVIDER-----",
+     "client_x509_cert_url": "------CLIENT-CERT-URL------",
+     "universe_domain": "googleapis.com"
+   }
+   
+   ```
+7. Run Project
 
    ```Bashrun
    npm run start
