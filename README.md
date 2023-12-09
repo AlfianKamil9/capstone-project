@@ -16,6 +16,7 @@
    ```ModelQuiz
    https://storage.googleapis.com/models-mechine-learning-ch2-ps134/model_model2/model.json
    ```
+
    Model For Image
 
    ```ModelImage
