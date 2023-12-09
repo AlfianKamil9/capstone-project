@@ -10,7 +10,19 @@
 - Sequelize
 - Swagger-ui-express
 - Validator
-## Mechine Learning Models
+## Machine Learning Models
+1. Clone Deployment Models
+   ```Clone
+   git clone -b deployment-ml-cc https://github.com/AlfianKamil9/capstone-project.git
+   ```
+2. Install dependencies
+   ```Bash
+   npm install
+   ```
+3. Run Script
+   ```Script
+   npm run dev
+   ```
 ## Instalation 
 If you want to try this project,
 1. Clone this project
