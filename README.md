@@ -107,7 +107,7 @@ If you want to try this project,
    npx sequelize-cli db:seed:undo:all
    ```
 
-6. Add `serviceaccountkey.json` from your service account
+6. Add file `serviceaccountkey.json` from your service account
 
    ```bash
    #Example - Please Change with your serviceaccountkey
