@@ -19,13 +19,13 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      answer: {
-        type: Sequelize.TEXT,
+      answerForm: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      image: {
-        allowNull: false,
+      answerImage: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

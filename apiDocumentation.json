@@ -10,6 +10,10 @@
     {
       "url": "http://localhost:3000",
       "description": "localhost"
+    },
+    {
+      "url": "http://34.128.120.23:3000",
+      "description": "development"
     }
   ],
   "tags": [
