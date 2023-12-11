@@ -64,40 +64,40 @@ const submitQuiz = async (req, res) => {
 // SUBMIT IMAGE
 const submitImage = async (req, res) => {
   // MENDEFINISIKAN TRY CATCH
-  try {
-    const data = req.body;
-    if (req.file && req.file.cloudStoragePublicUrl) {
-      data.imageUrl = req.file.cloudStoragePublicUrl;
-    }
+  const data = req.body;
+  if (req.file && req.file.cloudStoragePublicUrl) {
+    data.imageUrl = req.file.cloudStoragePublicUrl;
+  }
 
-    // mendapatkan answerForm untuk diproses
-    const userId = req.userData.id;
-    const allData = await Answer.findAll({
-      where: {
-        userId: userId,
-      },
-      order: [['id', 'DESC']],
+  // mendapatkan answerForm untuk diproses
+  const userId = req.userData.id;
+  const allData = await Answer.findAll({
+    where: {
+      userId: userId,
+    },
+    order: [['id', 'DESC']],
+  });
+
+  // CEK ImageAnswer Apakah nilainya == 0
+  if (allData[0].answerImage != 0 || allData[0].answerImage != '0') {
+    return res.status(403).json({
+      code: 403,
+      message: 'This Field is already filled',
     });
+  }
 
-    // CEK ImageAnswer Apakah nilainya == 0
-    if (allData[0].answerImage != 0 || allData[0].answerImage != '0') {
-      return res.status(403).json({
-        code: 403,
-        message: 'This Field is already filled',
-      });
-    }
+  // DEFINISI NILAI ANSWER FORM
+  const answerForm = JSON.parse(allData[0].answerForm);
+  console.log('nilai answerForm dari db:', answerForm);
 
-    // DEFINISI NILAI ANSWER FORM
-    const answerForm = JSON.parse(allData[0].answerForm);
-    console.log('nilai answerForm dari db:', answerForm);
+  // DEFINISI IMAGE
+  const input = data.imageUrl;
 
-    // DEFINISI IMAGE
-    const input = data.imageUrl;
+  // DEFINISI KIRIMAN ANSWER DAN IMAGE
+  const inputBahan = { input, answerForm };
+  console.log(inputBahan);
 
-    // DEFINISI KIRIMAN ANSWER DAN IMAGE
-    const inputBahan = { input, answerForm };
-    console.log(inputBahan);
-
+  try {
     const url = process.env.ML_URL + '/predict';
     const request = await axios.post(url, inputBahan, {
       headers: {
