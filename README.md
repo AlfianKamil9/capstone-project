@@ -37,6 +37,7 @@
    ```Script
    npm run dev
    ```
+4. Wait until `Model Form` and `Model Image` loaded, and server running on `http://localhost:5000`
 ## Instalation 
 If you want to try this project,
 1. Clone this project
@@ -132,6 +133,7 @@ If you want to try this project,
    ```Bashrun
    npm run start
    ```
+8. Project running on `http://localhost:3000`
 
 ## API Dokumentasi
 Dokumentasi Sweager API
