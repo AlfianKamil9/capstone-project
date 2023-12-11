@@ -3,7 +3,6 @@ package com.bcare.bcareapp.ui.login
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.preference.Preference
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -11,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.bcare.bcareapp.R
 import com.bcare.bcareapp.data.local.preference.UserPreference
 import com.bcare.bcareapp.data.local.result.Result
 import com.bcare.bcareapp.data.remote.response.login.LoginResponse
@@ -47,23 +45,20 @@ class LoginActivity : AppCompatActivity() {
 
     private fun processLogin(body: LoginResponse) {
         try {
-            if (body.error) {
-                showSnackbar(body.message)
-            } else {
                 val preferences = UserPreference.getInstance(dataStore)
                 AlertDialog.Builder(this).apply {
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                    intent.putExtra(MainActivity.EXTRA_TOKEN, body.loginResult.token)
+                    intent.putExtra(MainActivity.EXTRA_TOKEN, body.token)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     startActivity(intent)
                     CoroutineScope(Dispatchers.Main).launch {
-                        preferences.saveToken(body.loginResult.token)
+                        preferences.saveToken(body.token)
                     }
                     finish()
                     create()
                     show()
                 }
-            }
+
         } catch (e: HttpException) {
             // Handle the HTTP exception by showing an error message
             val errorMessage = "An error occurred: ${e.message}"

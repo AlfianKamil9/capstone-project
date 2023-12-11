@@ -5,17 +5,15 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.Preference
 import android.view.View
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.bcare.bcareapp.R
 import com.bcare.bcareapp.data.local.preference.UserPreference
 import com.bcare.bcareapp.databinding.ActivityWelcomeBinding
 import com.bcare.bcareapp.ui.login.LoginActivity
 import com.bcare.bcareapp.ui.main.MainActivity
-import com.bcare.bcareapp.ui.signup.SignUpActivity
+import com.bcare.bcareapp.ui.signup.SignupActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,26 +22,35 @@ class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "tokenDataStore")
+
+//    private val loginViewModel: LoginViewModel by viewModels {
+//        ViewModelFactory.get
+//    }
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val preferences = UserPreference.getInstance(dataStore)
-        CoroutineScope(Dispatchers.Main).launch {
-            preferences.getToken().collect {
-                if (it == "") {
-                    binding = ActivityWelcomeBinding.inflate(layoutInflater)
-                    setContentView(binding.root)
-                    setupAction()
-                    playAnimation()
-                    playAlphaAnimation()
-                    supportActionBar?.hide()
-                } else {
-                    val intent = Intent(this@WelcomeActivity, MainActivity::class.java)
-                    intent.putExtra(MainActivity.EXTRA_TOKEN, it)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                    startActivity(intent)
-                }
+    super.onCreate(savedInstanceState)
+    val preferences = UserPreference.getInstance(dataStore)
+    CoroutineScope(Dispatchers.Main).launch {
+        preferences.getToken().collect {
+            if (it == "") {
+                binding = ActivityWelcomeBinding.inflate(layoutInflater)
+                setContentView(binding.root)
+                setupAction()
+                playAnimation()
+                playAlphaAnimation()
+                supportActionBar?.hide()
+            } else {
+                val intent = Intent(this@WelcomeActivity, MainActivity::class.java)
+                intent.putExtra(MainActivity.EXTRA_TOKEN, it)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
             }
         }
+    }
+}
+
+
+    companion object {
+        private const val TAG = "LoginActivity"
     }
 
     private fun setupAction() {
@@ -52,7 +59,7 @@ class WelcomeActivity : AppCompatActivity() {
         }
 
         binding.btnSignupWelcome.setOnClickListener {
-            startActivity(Intent(this, SignUpActivity::class.java))
+            startActivity(Intent(this, SignupActivity::class.java))
         }
     }
 

@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.bcare.bcareapp.data.di.Injection
-import com.bcare.bcareapp.data.local.repository.UserRepository
 import com.bcare.bcareapp.ui.login.LoginViewModel
 import com.bcare.bcareapp.ui.signup.SignupViewModel
 
@@ -26,9 +25,9 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.NewInst
 //                MainViewModel(Injection.provideRepository(context)) as T
 //            }
 //
-//            modelClass.isAssignableFrom(AddStoryViewModel::class.java) -> {
-//                AddStoryViewModel(Injection.provideRepository(context)) as T
-//            }
+            modelClass.isAssignableFrom(SignupViewModel::class.java) -> {
+                SignupViewModel(Injection.provideRepository(context)) as T
+            }
 //
 //            modelClass.isAssignableFrom(MapsViewModel::class.java) -> {
 //                MapsViewModel(Injection.provideRepository(context)) as T

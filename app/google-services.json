@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "43918897425",
+    "project_id": "bcareapp-e0223",
+    "storage_bucket": "bcareapp-e0223.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43918897425:android:13f007c8b7fa789b0d9cb0",
+        "android_client_info": {
+          "package_name": "com.bcare.bcareapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43918897425-094ferlhi77ke8a8ab570l5s7an0jp9k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bcare.bcareapp",
+            "certificate_hash": "ae1833d62b6a9d91eec1eaef236dc5a268c32ccc"
+          }
+        },
+        {
+          "client_id": "43918897425-49u8btam1031tn3lilhds0gc3bqdr6kf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrlu4kOpMIGG5-oaRjgGg58C9oBnQfcNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43918897425-49u8btam1031tn3lilhds0gc3bqdr6kf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
