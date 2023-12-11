@@ -44,7 +44,7 @@
    npm run dev
    ```
 4. Wait until `Model Form` and `Model Image` loaded, and server running on `http://localhost:5000`
-## Instalation 
+## Installation 
 If you want to try this project,
 1. Clone this project
    
