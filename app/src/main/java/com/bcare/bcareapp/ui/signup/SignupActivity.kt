@@ -47,8 +47,8 @@ class SignupActivity : AppCompatActivity() {
 
     private fun setupAction() {
         binding.btnSignup.setOnClickListener {
-            val name = binding.etUsernameSignup.text.toString()
             val email = binding.etEmailSignup.text.toString()
+            val name = binding.etUsernameSignup.text.toString()
             val familyEmail = binding.etFamilyEmailSignup.text.toString()
             val password = binding.etPasswordSignup.text.toString()
             val confPassword = binding.etConfirmPasswordSignup.text.toString()
