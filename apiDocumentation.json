@@ -194,43 +194,38 @@
         ]
       }
     },
-    "/api/v1/submit-quiz/{id}": {
-      "put": {
+    "/api/v1/submit-image": {
+      "post": {
         "tags": ["Submit To ML"],
-        "summary": "Submit Data Image ML",
+        "summary": "Submit Data ML",
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
                 "type": "object",
                 "properties": {
-                  "image": { "type": "string" }
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
                 },
-                "required": ["image"]
+                "required": ["file"]
               }
             }
           }
         },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            },
-            "required": true,
-            "description": "ID Answer"
-          }
-        ],
         "responses": {
-          "400": {
-            "description": "Semua data harus diisi"
+          "401": {
+            "description": "Token is Requred"
+          },
+          "403": {
+            "description": "This Field is already completed"
           },
           "500": {
             "description": "Server Error"
           },
-          "200": {
-            "description": "Successfully Submit Quiz"
+          "201": {
+            "description": "Successfully Submit Image"
           }
         },
         "security": [
@@ -240,6 +235,7 @@
         ]
       }
     },
+
     "/api/v1/questions": {
       "get": {
         "tags": ["Question"],

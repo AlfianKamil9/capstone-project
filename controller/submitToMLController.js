@@ -31,17 +31,8 @@ const submitQuiz = async (req, res) => {
   });
   const jsonString = JSON.stringify(input);
   console.log(jsonString);
+  //TRY CATCH
   try {
-    // const url = process.env.ML_URL + '/predict-form';
-    // const request = await axios.post(url, input1, {
-    //   headers: {
-    //     Authorization: `Baerer ${process.env.ML_KEY}`,
-    //     'Content-Type': 'application/json',
-    //   },
-    // });
-    // const result = request.data;
-    // console.log(result);
-
     const sendAnswer = await Answer.create({
       userId: userId,
       answerForm: jsonString,
@@ -72,33 +63,41 @@ const submitQuiz = async (req, res) => {
 
 // SUBMIT IMAGE
 const submitImage = async (req, res) => {
-  const data = req.body;
-  if (req.file && req.file.cloudStoragePublicUrl) {
-    data.imageUrl = req.file.cloudStoragePublicUrl;
-  }
-
-  // mendapatkan answerForm untuk diproses
-  const userId = req.userData.id;
-  const allData = await Answer.findAll({
-    where: {
-      userId: userId,
-    },
-    order: [['id', 'DESC']],
-  });
-
-  // DEFINISI NILAI ANSWER FORM
-  const answerForm = JSON.parse(allData[0].answerForm);
-  console.log('nilai answerForm dari db:', answerForm);
-
-  // DEFINISI IMAGE
-  const input = data.imageUrl;
-
-  // DEFINISI KIRIMAN ANSWER DAN IMAGE
-  const inputBahan = { input, answerForm };
-  console.log(inputBahan);
-
   // MENDEFINISIKAN TRY CATCH
   try {
+    const data = req.body;
+    if (req.file && req.file.cloudStoragePublicUrl) {
+      data.imageUrl = req.file.cloudStoragePublicUrl;
+    }
+
+    // mendapatkan answerForm untuk diproses
+    const userId = req.userData.id;
+    const allData = await Answer.findAll({
+      where: {
+        userId: userId,
+      },
+      order: [['id', 'DESC']],
+    });
+
+    // CEK ImageAnswer Apakah nilainya == 0
+    if (allData[0].answerImage != 0 || allData[0].answerImage != '0') {
+      return res.status(403).json({
+        code: 403,
+        message: 'This Field is already filled',
+      });
+    }
+
+    // DEFINISI NILAI ANSWER FORM
+    const answerForm = JSON.parse(allData[0].answerForm);
+    console.log('nilai answerForm dari db:', answerForm);
+
+    // DEFINISI IMAGE
+    const input = data.imageUrl;
+
+    // DEFINISI KIRIMAN ANSWER DAN IMAGE
+    const inputBahan = { input, answerForm };
+    console.log(inputBahan);
+
     const url = process.env.ML_URL + '/predict';
     const request = await axios.post(url, inputBahan, {
       headers: {
@@ -107,13 +106,17 @@ const submitImage = async (req, res) => {
       },
     });
     const result = request.data;
-    await Answer.update(
-      { answerImage: input }, // Data yang akan diupdate
-      { where: { id: allData[0].id } }          // Kondisi untuk memilih data yang akan diupdate
+
+    // MEMASUKKAN NILAI AnswerImage dalam bentuk LINK
+    const transfer = await Answer.update(
+      { answerImage: input, answerResult: result.data }, // Data yang akan diupdate
+      { where: { id: allData[0].id } } // Kondisi untuk memilih data yang akan diupdate
     );
-    if (result.code == 200) {
-      res.status(200).json({
-        code: 200,
+
+    //CEK RESPONSE
+    if (result.code == 200 && transfer) {
+      res.status(201).json({
+        code: 201,
         message: result.message,
         data: result.data,
       });

@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       userId: DataTypes.INTEGER,
       answerForm: DataTypes.STRING,
       answerImage: DataTypes.STRING,
+      answerResult: DataTypes.STRING,
     },
     {
       sequelize,
