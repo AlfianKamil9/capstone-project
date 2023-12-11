@@ -66,27 +66,6 @@ function predict(modelImage, modelForm, inputImage, inputForm) {
   }
 }
 
-// function predictImage(model, input, form) {
-//   try {
-//     const tensor = tfjs.node.decodeImage(input).resizeNearestNeighbor([200, 200]).mean(2).expandDims(2);
-//     const tensor2 = tensor.toFloat().div(tfjs.scalar(255));
-//     const tensor3 = tensor2.expandDims(0);
-//     console.log(tensor3);
-//     const arg = model.predict(tensor3);
-//     console.log(arg);
-//     const argIndex = arg.argMax(1).dataSync()[0];
-//     console.log(argIndex);
-//     //
-//     const finalpredict = argIndex.add(form).div(2);
-//     console.log('FINAL PREDICT:', finalpredict);
-//     const answer = finalpredict.argMax().dataSync()[0];
-//     console.log('ANSWER :', answer);
-//     return argIndex;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
 module.exports = {
   loadModel,
   loadModelImage,
