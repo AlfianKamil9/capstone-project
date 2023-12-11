@@ -149,5 +149,3 @@ Table of API
 | `GET`  | /api/v1/artikel/{id} | no | |
 | `GET` | /api/v1/questions | required | |
 | `DELETE` | /api/v1/logout | required | |
-## Deploy to APP Engine 
-## Deploy to Vertex AI
