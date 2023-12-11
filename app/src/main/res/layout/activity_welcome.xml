@@ -85,21 +85,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+
+
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/btnGoogleWelcome"
         android:layout_width="350dp"
         android:layout_height="53dp"
         android:layout_marginTop="5dp"
-        android:paddingStart="20dp"
-        android:background="@drawable/bg_default"
-        android:drawableStart="@drawable/google"
-        android:text="@string/bgoogleLogin"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:fontFamily="@font/boldpoppins"
         app:layout_constraintTop_toBottomOf="@+id/tvOrWelcome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+<!--    <com.google.android.gms.common.SignInButton-->
+<!--        android:id="@+id/signInButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 
     <ProgressBar

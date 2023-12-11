@@ -3,23 +3,11 @@ package com.bcare.bcareapp.data.remote.response.login
 import com.google.gson.annotations.SerializedName
 
 class LoginResponse (
-    @field:SerializedName("loginResult")
-    val loginResult: LoginResult,
-
-    @field:SerializedName("error")
-    val error: Boolean,
+    @field:SerializedName("code")
+    val code: Int,
 
     @field:SerializedName("message")
-    val message: String
-)
-
-data class LoginResult(
-
-    @field:SerializedName("name")
-    val name: String,
-
-    @field:SerializedName("userId")
-    val userId: String,
+    val message: String,
 
     @field:SerializedName("token")
     val token: String

@@ -1,6 +1,5 @@
 package com.bcare.bcareapp.data.local.preference
 
-import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.stringPreferencesKey
@@ -11,21 +10,15 @@ import kotlinx.coroutines.flow.map
 
 class UserPreference private constructor(private val dataStore: DataStore<Preferences>){
 
-    fun getToken(): Flow<String?> {
+    fun getToken(): Flow<String> {
         return dataStore.data.map { preferences ->
-            preferences[TOKEN]
+            preferences[TOKEN]  ?: ""
         }
     }
 
     suspend fun saveToken(token: String) {
         dataStore.edit {preferences ->
             preferences[TOKEN] = token
-        }
-    }
-
-    suspend fun  logout() {
-        dataStore.edit {
-            it.clear()
         }
     }
 

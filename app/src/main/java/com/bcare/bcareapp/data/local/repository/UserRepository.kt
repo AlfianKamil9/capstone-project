@@ -3,15 +3,10 @@ package com.bcare.bcareapp.data.local.repository
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
-import com.bcare.bcareapp.data.local.preference.UserPreference
 import com.bcare.bcareapp.data.local.result.Result
 import com.bcare.bcareapp.data.remote.response.login.LoginResponse
 import com.bcare.bcareapp.data.remote.response.register.RegisterResponse
 import com.bcare.bcareapp.data.remote.retrofit.ApiService
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.emitAll
-import kotlinx.coroutines.flow.flow
-import java.util.prefs.Preferences
 
 class UserRepository(
     private val apiService: ApiService) {
@@ -33,12 +28,12 @@ class UserRepository(
     fun postRegister(
         email: String,
         name: String,
-        familyName: String,
+        familyEmail: String,
         password: String,
         confPassword: String
     ): LiveData<Result<RegisterResponse>> = liveData {
         try {
-            val response = apiService.postRegister(email, name, familyName, password, confPassword)
+            val response = apiService.postRegister(email, name, familyEmail, password, confPassword)
             emit(Result.Success(response))
         } catch (e: Exception) {
             Log.e("RegisterViewModel", "userRegister: ${e.message.toString()}")
