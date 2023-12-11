@@ -10,6 +10,12 @@
 - Sequelize
 - Swagger-ui-express
 - Validator
+- @tensorflow/tfjs-node
+- @tensorflow/tfjs
+- axios
+- @google-cloud/storage
+- node-fetch
+- multer
 ## Machine Learning Models
 #### Model For Quiz
    
