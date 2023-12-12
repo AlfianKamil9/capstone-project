@@ -15,7 +15,7 @@
             android:layout_height="130dp"
             android:padding="10dp">
 
-            <com.google.android.material.imageview.ShapeableImageView
+            <ImageView
                 android:id="@+id/imgArtikel"
                 android:layout_width="85dp"
                 android:layout_height="72dp"
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/aJudulArtikel"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:fontFamily="@font/boldpoppins"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

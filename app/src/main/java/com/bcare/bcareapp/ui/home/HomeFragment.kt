@@ -1,39 +1,45 @@
 package com.bcare.bcareapp.ui.home
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bcare.bcareapp.R
+import com.bcare.bcareapp.databinding.FragmentHomeBinding
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
-
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import com.bcare.bcareapp.data.local.result.Result
+import com.bcare.bcareapp.data.remote.response.artikel.DataItem
+import com.bcare.bcareapp.ui.artikel.ArtikelActivity
 
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "auth")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+    private val articleViewModel: ArtikelViewModel by viewModels{
+        ArtikelViewModelFactory.getInstance(requireContext(),requireContext().dataStore)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        getSlide(binding.root)
+        return binding.root
 
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
-        getSlide(view)
-        return view
     }
 
     private fun getSlide(view: View) {
@@ -48,16 +54,55 @@ class HomeFragment : Fragment() {
         imageSlider.setImageList(imageList, ScaleTypes.FIT)
     }
 
-    companion object {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        articleViewModel.getListArticle().observe(requireActivity()) { result ->
+            when (result) {
+                is Result.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                is Result.Success -> {
+                    binding.progressBar.visibility = View.GONE
+                    val listArticle = result.data
+                    setArticleData(listArticle)
+                }
+                is Result.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(
+                        requireActivity(),
+                        "Failed to load article",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
                 }
             }
+        }
     }
+
+    private fun setArticleData(listArticle: List<DataItem>) {
+        val adapter = ListArtikelAdapter(listArticle)
+
+//        adapter.setOnItemClickCallback(object : ListArtikelAdapter.OnItemClickCallback {
+//            override fun onItemArticleClicked(item: DataItem) {
+//                navigateToDetailArticle(item)
+//            }
+//        })
+
+        binding.apply {
+            rvArtikel.adapter = adapter
+
+            val layoutManager = LinearLayoutManager(requireContext())
+            binding.rvArtikel.layoutManager = layoutManager
+            val itemDecoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
+            binding.rvArtikel.addItemDecoration(itemDecoration)
+        }
+
+    }
+
+//    private fun navigateToDetailArticle(article: DataItem) {
+//        val moveToDetail = Intent(requireActivity(), ArtikelActivity::class.java)
+//        moveToDetail.putExtra(ArtikelActivity.ID_ARTICLE, article.id)
+//        startActivity(moveToDetail)
+//    }
 }
