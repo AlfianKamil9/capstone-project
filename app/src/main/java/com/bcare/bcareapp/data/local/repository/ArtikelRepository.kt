@@ -22,7 +22,7 @@ class ArtikelRepository private constructor(
         }
     }
 
-    fun getDetailArticle(id: String): Flow<Result<Data>> = flow {
+    fun getDetailArticle(id: Int): Flow<Result<Data>> = flow {
         emit(Result.Loading)
         try {
             val response = articleApi.getDetailArticle(id)

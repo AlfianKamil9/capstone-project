@@ -34,7 +34,7 @@ interface ApiService {
 
     @GET("/api/v1/artikel/{id}")
     suspend fun getDetailArticle(
-        @Path("id") id: String
+        @Path("id") id: Int
     ): DetailArtikelResponse
 }
 

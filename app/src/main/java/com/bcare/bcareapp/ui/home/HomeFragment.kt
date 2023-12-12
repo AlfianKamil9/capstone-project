@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         getSlide(binding.root)
         return binding.root
@@ -83,11 +83,11 @@ class HomeFragment : Fragment() {
     private fun setArticleData(listArticle: List<DataItem>) {
         val adapter = ListArtikelAdapter(listArticle)
 
-//        adapter.setOnItemClickCallback(object : ListArtikelAdapter.OnItemClickCallback {
-//            override fun onItemArticleClicked(item: DataItem) {
-//                navigateToDetailArticle(item)
-//            }
-//        })
+        adapter.setOnItemClickCallback(object : ListArtikelAdapter.OnItemClickCallback {
+            override fun onItemArticleClicked(item: DataItem) {
+                navigateToDetailArticle(item)
+            }
+        })
 
         binding.apply {
             rvArtikel.adapter = adapter
@@ -100,9 +100,9 @@ class HomeFragment : Fragment() {
 
     }
 
-//    private fun navigateToDetailArticle(article: DataItem) {
-//        val moveToDetail = Intent(requireActivity(), ArtikelActivity::class.java)
-//        moveToDetail.putExtra(ArtikelActivity.ID_ARTICLE, article.id)
-//        startActivity(moveToDetail)
-//    }
+    private fun navigateToDetailArticle(article: DataItem) {
+        val moveToDetail = Intent(requireActivity(), ArtikelActivity::class.java)
+        moveToDetail.putExtra(ArtikelActivity.ID_ARTICLE, article.id)
+        startActivity(moveToDetail)
+    }
 }

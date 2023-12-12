@@ -24,7 +24,9 @@
             android:exported="false" />
         <activity
             android:name=".ui.artikel.ArtikelActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/aArtikel"
+            android:parentActivityName=".ui.main.MainActivity"/>
         <activity
             android:name=".ui.scan.ScanActivity"
             android:exported="false" />
