@@ -3,10 +3,13 @@ package com.bcare.bcareapp.data.remote.retrofit
 import com.bcare.bcareapp.data.remote.response.artikel.ArtikelResponse
 import com.bcare.bcareapp.data.remote.response.artikelDetail.DetailArtikelResponse
 import com.bcare.bcareapp.data.remote.response.login.LoginResponse
+import com.bcare.bcareapp.data.remote.response.quiz.ShowQuizResponse
 import com.bcare.bcareapp.data.remote.response.register.RegisterResponse
+import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Path
 
@@ -36,5 +39,8 @@ interface ApiService {
     suspend fun getDetailArticle(
         @Path("id") id: Int
     ): DetailArtikelResponse
+
+    @GET("/api/v1/questions")
+    fun getQuiz(@Header("Authorization") token: String): Call<ShowQuizResponse>
 }
 

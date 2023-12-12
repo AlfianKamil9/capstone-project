@@ -17,7 +17,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Saya tidak mampu tertawa dan melihat sisi lucu dari hal-hal sekitar saya"
+            android:text=""
             android:textSize="20sp"
             android:fontFamily="@font/boldpoppins"
             app:layout_constraintTop_toTopOf="parent"
@@ -37,7 +37,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -48,7 +48,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sebagian waktu"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -59,7 +59,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak terlalu sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -70,7 +70,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak sama sekali"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
         </RadioGroup>
@@ -83,7 +83,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Saya tidak bisa melihat hal yang baik untuk masa yang akan datang"
+            android:text=""
             android:textSize="20sp"
             android:fontFamily="@font/boldpoppins"
             app:layout_constraintTop_toBottomOf="@+id/rg_soal1"
@@ -103,7 +103,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -114,7 +114,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sebagian waktu"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -125,7 +125,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak terlalu sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -136,7 +136,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak sama sekali"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
         </RadioGroup>
@@ -148,7 +148,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Saya selalu menyalahkan diri saya untuk hal-hal kecil"
+            android:text=""
             android:textSize="20sp"
             android:fontFamily="@font/boldpoppins"
             app:layout_constraintTop_toBottomOf="@+id/rg_soal2"
@@ -168,7 +168,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -179,7 +179,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sebagian waktu"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -190,7 +190,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak terlalu sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -201,7 +201,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak sama sekali"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
         </RadioGroup>
@@ -213,7 +213,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Saya terlalu cemas dan khawatir tanpa alasan"
+            android:text=""
             android:textSize="20sp"
             android:fontFamily="@font/boldpoppins"
             app:layout_constraintTop_toBottomOf="@+id/rg_soal3"
@@ -233,7 +233,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -244,7 +244,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sebagian waktu"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -255,7 +255,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak terlalu sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -266,7 +266,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak sama sekali"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
         </RadioGroup>
@@ -278,7 +278,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Saya merasa takut atau panik tanpa alasan yang sangat baik"
+            android:text=""
             android:textSize="20sp"
             android:fontFamily="@font/boldpoppins"
             app:layout_constraintTop_toBottomOf="@+id/rg_soal4"
@@ -298,7 +298,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -309,7 +309,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sebagian waktu"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -320,7 +320,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak terlalu sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -331,7 +331,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak sama sekali"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
         </RadioGroup>
@@ -343,7 +343,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Saya merasa keadaan sekitar saya sudah mulai tak bisa saya atasi"
+            android:text=""
             android:textSize="20sp"
             android:fontFamily="@font/boldpoppins"
             app:layout_constraintTop_toBottomOf="@+id/rg_soal5"
@@ -363,7 +363,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -374,7 +374,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sebagian waktu"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -385,7 +385,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak terlalu sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -396,7 +396,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak sama sekali"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
         </RadioGroup>
@@ -408,7 +408,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Saya sangat tidak bahagia sampai sya memiliki kesulitan tidur"
+            android:text=""
             android:textSize="20sp"
             android:fontFamily="@font/boldpoppins"
             app:layout_constraintTop_toBottomOf="@+id/rg_soal6"
@@ -428,7 +428,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -439,7 +439,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sebagian waktu"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -450,7 +450,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak terlalu sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -461,7 +461,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak sama sekali"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
         </RadioGroup>
@@ -473,7 +473,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Saya merasa sedih atau sengsara"
+            android:text=""
             android:textSize="20sp"
             android:fontFamily="@font/boldpoppins"
             app:layout_constraintTop_toBottomOf="@+id/rg_soal7"
@@ -493,7 +493,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -504,7 +504,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sebagian waktu"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -515,7 +515,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak terlalu sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -526,7 +526,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak sama sekali"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
         </RadioGroup>
@@ -538,7 +538,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Saya tidak bahagia sampai-sampai saya menangis"
+            android:text=""
             android:textSize="20sp"
             android:fontFamily="@font/boldpoppins"
             app:layout_constraintTop_toBottomOf="@+id/rg_soal8"
@@ -558,7 +558,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -569,7 +569,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sebagian waktu"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -580,7 +580,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak terlalu sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -591,7 +591,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak sama sekali"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
         </RadioGroup>
@@ -603,7 +603,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Pikiran untuk melukai diri sempat terlintas dii pikiran saya"
+            android:text=""
             android:textSize="20sp"
             android:fontFamily="@font/boldpoppins"
             app:layout_constraintTop_toBottomOf="@+id/rg_soal9"
@@ -623,7 +623,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -634,7 +634,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Ya, Sebagian waktu"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -645,7 +645,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak terlalu sering"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
 
@@ -656,10 +656,22 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Tidak sama sekali"
+                android:text=""
                 android:textSize="13sp"
                 android:fontFamily="@font/mediumpoppins"/>
         </RadioGroup>
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerViewQuiz"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginEnd="15dp"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            tools:listitem="@layout/item_quiz"/>-->
 
         <Button
             android:id="@+id/btnScanFace"

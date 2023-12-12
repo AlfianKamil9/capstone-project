@@ -57,6 +57,7 @@
     //label
     <string name="lHome">Home</string>
     <string name="lProfile">Profile</string>
+    <string name="lQuestion">Question</string>
 
     //artikel
     <string name="aArtikel">Artikel</string>
