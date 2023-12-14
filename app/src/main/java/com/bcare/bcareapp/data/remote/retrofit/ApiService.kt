@@ -3,10 +3,12 @@ package com.bcare.bcareapp.data.remote.retrofit
 import com.bcare.bcareapp.data.remote.response.artikel.ArtikelResponse
 import com.bcare.bcareapp.data.remote.response.artikelDetail.DetailArtikelResponse
 import com.bcare.bcareapp.data.remote.response.login.LoginResponse
+import com.bcare.bcareapp.data.remote.response.logout.LogoutResponse
 import com.bcare.bcareapp.data.remote.response.quiz.ShowQuizResponse
 import com.bcare.bcareapp.data.remote.response.register.RegisterResponse
 import com.bcare.bcareapp.data.remote.response.user.UserResponse
 import retrofit2.Call
+import retrofit2.http.DELETE
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -46,5 +48,8 @@ interface ApiService {
 
     @GET("/api/v1/user")
     fun getUserData(@Header("Authorization") token: String): Call<UserResponse>
+
+    @DELETE("/api/v1/logout")
+    fun logout(@Header("Authorization") authorization: String): Call<LogoutResponse>
 }
 

@@ -1,27 +1,34 @@
 package com.bcare.bcareapp.ui.profile
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.NavHostFragment
 import com.bcare.bcareapp.R
 import com.bcare.bcareapp.data.local.preference.UserPreference
+import com.bcare.bcareapp.data.remote.response.logout.LogoutResponse
 import com.bcare.bcareapp.data.remote.response.user.UserData
 import com.bcare.bcareapp.data.remote.response.user.UserResponse
 import com.bcare.bcareapp.data.remote.retrofit.ApiConfig
 import com.bcare.bcareapp.data.remote.retrofit.ApiService
+import com.bcare.bcareapp.ui.welcome.WelcomeActivity
+import kotlinx.coroutines.flow.first
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.awaitResponse
 import retrofit2.converter.gson.GsonConverterFactory
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "tokeDataStore")
 
@@ -66,6 +73,10 @@ class ProfileFragment : Fragment() {
                 // Make API request only if the token is not empty
                 if (token.isNotEmpty()) {
                     getUserData(token)
+
+                    // btn Logout
+                    val btnLogout: Button = view.findViewById(R.id.btnLogoutProfile)
+                    btnLogout.setOnClickListener { logout(token) }
                 }
             }
         }
@@ -108,4 +119,44 @@ class ProfileFragment : Fragment() {
             tvFamilyEmailProfile.text = it.familyEmail
         }
     }
+
+
+    private fun logout(token: String) {
+        lifecycleScope.launchWhenStarted {
+            val call = apiService.logout("Bearer $token")
+
+            try {
+                val response = call.awaitResponse()
+
+                if (response.isSuccessful) {
+                    // Handle successful logout
+                    Toast.makeText(requireContext(), "Logout successful", Toast.LENGTH_SHORT).show()
+
+                    // Reset token in dataStore within the coroutine
+                    preferences.saveToken("")
+
+                    // Start WelcomeActivity
+                    val intent = Intent(requireContext(), WelcomeActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    requireActivity().finish()
+
+                } else {
+                    // Handle unsuccessful logout
+                    val errorBody = response.errorBody()?.string()
+                    val errorMessage = if (errorBody.isNullOrEmpty()) {
+                        "Failed to logout"
+                    } else {
+                        errorBody
+                    }
+
+                    Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                // Handle exceptions
+                Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
 }
