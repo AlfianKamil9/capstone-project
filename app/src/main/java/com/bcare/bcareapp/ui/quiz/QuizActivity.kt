@@ -8,7 +8,12 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.lifecycleScope
 import com.bcare.bcareapp.R
+import com.bcare.bcareapp.data.local.preference.UserPreference
 import com.bcare.bcareapp.data.remote.response.quiz.ShowQuizResponse
 import com.bcare.bcareapp.data.remote.retrofit.ApiConfig
 import com.bcare.bcareapp.data.remote.retrofit.ApiService
@@ -20,8 +25,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class QuizActivity : AppCompatActivity() {
-    // Assume you have a variable to hold the quiz response
-    private lateinit var quizResponse: ShowQuizResponse
+
+    private lateinit var quizApi: ApiService
 
     // RadioButton Soal 1
     private lateinit var aSoal1: RadioButton
@@ -88,50 +93,30 @@ class QuizActivity : AppCompatActivity() {
 
     private lateinit var btnScanFace: Button
 
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "tokeDataStore")
+    private val preferences by lazy {
+        UserPreference.getInstance(this@QuizActivity.dataStore)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl("http://34.128.78.237:3000/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+//        val retrofit = Retrofit.Builder()
+//            .baseUrl("http://34.128.78.237:3000/")
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .build()
 
         // Create an instance of the QuizApi interface
-        val quizApi = retrofit.create(ApiService::class.java)
+        quizApi = ApiConfig.getApi()
 
-        val token = retrieveTokenFromSharedPreferences()
-        val call = quizApi.getQuiz("Bearer $token")
-        call.enqueue(object : Callback<ShowQuizResponse> {
-            override fun onResponse(call: Call<ShowQuizResponse>, response: Response<ShowQuizResponse>) {
-                if (response.isSuccessful) {
-                    // Quiz data is successfully received
-                    quizResponse = response.body()!!
-
-                    // Save the token to SharedPreferences
-                    saveTokenToSharedPreferences(token)
-
-                    // set the data to UI elements
-                    setQuizDataToUI()
-
-                } else {
-                    // Handle unsuccessful response
-                    val errorBody = response.errorBody()?.string()
-                    val errorMessage = if (errorBody.isNullOrEmpty()) {
-                        "Failed to fetch quiz data"
-                    } else {
-                        errorBody
-                    }
-
-                    Toast.makeText(this@QuizActivity, errorMessage, Toast.LENGTH_SHORT).show()
+        lifecycleScope.launchWhenStarted {
+            preferences.getToken().collect { token ->
+                // Make API request only if the token is not empty
+                if (token.isNotEmpty()) {
+                    getQuizData(token)
                 }
             }
-
-            override fun onFailure(call: Call<ShowQuizResponse>, t: Throwable) {
-                // Handle network failure
-                Toast.makeText(this@QuizActivity, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
+        }
 
         // Initialize RadioButtons soal 1
         aSoal1 = findViewById(R.id.a_soal1)
@@ -213,79 +198,100 @@ class QuizActivity : AppCompatActivity() {
 
     }
 
-    private fun saveTokenToSharedPreferences(token: String?) {
-        val sharedPreferences = getSharedPreferences("quiz_prefs", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString("token", token)
-        editor.apply()
+    private fun getQuizData(token: String) {
+        // Make API request
+        val call = quizApi.getQuiz("Bearer $token")
+
+        call.enqueue(object : Callback<ShowQuizResponse> {
+            override fun onResponse(call: Call<ShowQuizResponse>, response: Response<ShowQuizResponse>) {
+                if (response.isSuccessful) {
+                    val quizResponse = response.body()
+                    setQuizDataToUI(quizResponse)
+                } else {
+                    // Handle unsuccessful response
+                    val errorBody = response.errorBody()?.string()
+                    val errorMessage = if (errorBody.isNullOrEmpty()) {
+                        "Failed to fetch quiz data"
+                    } else {
+                        errorBody
+                    }
+
+                    Toast.makeText(this@QuizActivity, errorMessage, Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ShowQuizResponse>, t: Throwable) {
+                // Handle failure
+                Toast.makeText(this@QuizActivity, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
-    private fun retrieveTokenFromSharedPreferences(): String? {
-        val sharedPreferences = getSharedPreferences("quiz_prefs", Context.MODE_PRIVATE)
-        return sharedPreferences.getString("token", null)
-    }
 
-    private fun setQuizDataToUI() {
-        // Set the text Soal 1
-        tvSoal1.text = quizResponse.data[0].question
-        aSoal1.text = quizResponse.data[0].opsi1
-        bSoal1.text = quizResponse.data[0].opsi2
-        cSoal1.text = quizResponse.data[0].opsi3
-        dSoal1.text = quizResponse.data[0].opsi4
-        // Set the text Soal 2
-        tvSoal2.text = quizResponse.data[1].question
-        aSoal2.text = quizResponse.data[1].opsi1
-        bSoal2.text = quizResponse.data[1].opsi2
-        cSoal2.text = quizResponse.data[1].opsi3
-        dSoal2.text = quizResponse.data[1].opsi4
-        // Set the text Soal 3
-        tvSoal3.text = quizResponse.data[2].question
-        aSoal3.text = quizResponse.data[2].opsi1
-        bSoal3.text = quizResponse.data[2].opsi2
-        cSoal3.text = quizResponse.data[2].opsi3
-        dSoal3.text = quizResponse.data[2].opsi4
-        // Set the text Soal 4
-        tvSoal4.text = quizResponse.data[3].question
-        aSoal4.text = quizResponse.data[3].opsi1
-        bSoal4.text = quizResponse.data[3].opsi2
-        cSoal4.text = quizResponse.data[3].opsi3
-        dSoal4.text = quizResponse.data[3].opsi4
-        // Set the text Soal 5
-        tvSoal5.text = quizResponse.data[4].question
-        aSoal5.text = quizResponse.data[4].opsi1
-        bSoal5.text = quizResponse.data[4].opsi2
-        cSoal5.text = quizResponse.data[4].opsi3
-        dSoal5.text = quizResponse.data[4].opsi4
-        // Set the text Soal 6
-        tvSoal6.text = quizResponse.data[5].question
-        aSoal6.text = quizResponse.data[5].opsi1
-        bSoal6.text = quizResponse.data[5].opsi2
-        cSoal6.text = quizResponse.data[5].opsi3
-        dSoal6.text = quizResponse.data[5].opsi4
-        // Set the text Soal 7
-        tvSoal7.text = quizResponse.data[6].question
-        aSoal7.text = quizResponse.data[6].opsi1
-        bSoal7.text = quizResponse.data[6].opsi2
-        cSoal7.text = quizResponse.data[6].opsi3
-        dSoal7.text = quizResponse.data[6].opsi4
-        // Set the text Soal 8
-        tvSoal8.text = quizResponse.data[7].question
-        aSoal8.text = quizResponse.data[7].opsi1
-        bSoal8.text = quizResponse.data[7].opsi2
-        cSoal8.text = quizResponse.data[7].opsi3
-        dSoal8.text = quizResponse.data[7].opsi4
-        // Set the text Soal 9
-        tvSoal9.text = quizResponse.data[8].question
-        aSoal9.text = quizResponse.data[8].opsi1
-        bSoal9.text = quizResponse.data[8].opsi2
-        cSoal9.text = quizResponse.data[8].opsi3
-        dSoal9.text = quizResponse.data[8].opsi4
-        // Set the text Soal 10
-        tvSoal10.text = quizResponse.data[9].question
-        aSoal10.text = quizResponse.data[9].opsi1
-        bSoal10.text = quizResponse.data[9].opsi2
-        cSoal10.text = quizResponse.data[9].opsi3
-        dSoal10.text = quizResponse.data[9].opsi4
+    private fun setQuizDataToUI(quizResponse: ShowQuizResponse?) {
+        quizResponse?.let {
+            // Set the text Soal 1
+            tvSoal1.text = it.data[0].question
+            aSoal1.text = it.data[0].opsi1
+            bSoal1.text = it.data[0].opsi2
+            cSoal1.text = it.data[0].opsi3
+            dSoal1.text = it.data[0].opsi4
+            // Set the text Soal 2
+            tvSoal2.text = it.data[1].question
+            aSoal2.text = it.data[1].opsi1
+            bSoal2.text = it.data[1].opsi2
+            cSoal2.text = it.data[1].opsi3
+            dSoal2.text = it.data[1].opsi4
+            // Set the text Soal 3
+            tvSoal3.text = it.data[2].question
+            aSoal3.text = it.data[2].opsi1
+            bSoal3.text = it.data[2].opsi2
+            cSoal3.text = it.data[2].opsi3
+            dSoal3.text = it.data[2].opsi4
+            // Set the text Soal 4
+            tvSoal4.text = it.data[3].question
+            aSoal4.text = it.data[3].opsi1
+            bSoal4.text = it.data[3].opsi2
+            cSoal4.text = it.data[3].opsi3
+            dSoal4.text = it.data[3].opsi4
+            // Set the text Soal 5
+            tvSoal5.text = it.data[4].question
+            aSoal5.text = it.data[4].opsi1
+            bSoal5.text = it.data[4].opsi2
+            cSoal5.text = it.data[4].opsi3
+            dSoal5.text = it.data[4].opsi4
+            // Set the text Soal 6
+            tvSoal6.text = it.data[5].question
+            aSoal6.text = it.data[5].opsi1
+            bSoal6.text = it.data[5].opsi2
+            cSoal6.text = it.data[5].opsi3
+            dSoal6.text = it.data[5].opsi4
+            // Set the text Soal 7
+            tvSoal7.text = it.data[6].question
+            aSoal7.text = it.data[6].opsi1
+            bSoal7.text = it.data[6].opsi2
+            cSoal7.text = it.data[6].opsi3
+            dSoal7.text = it.data[6].opsi4
+            // Set the text Soal 8
+            tvSoal8.text = it.data[7].question
+            aSoal8.text = it.data[7].opsi1
+            bSoal8.text = it.data[7].opsi2
+            cSoal8.text = it.data[7].opsi3
+            dSoal8.text = it.data[7].opsi4
+            // Set the text Soal 9
+            tvSoal9.text = it.data[8].question
+            aSoal9.text = it.data[8].opsi1
+            bSoal9.text = it.data[8].opsi2
+            cSoal9.text = it.data[8].opsi3
+            dSoal9.text = it.data[8].opsi4
+            // Set the text Soal 10
+            tvSoal10.text = it.data[9].question
+            aSoal10.text = it.data[9].opsi1
+            bSoal10.text = it.data[9].opsi2
+            cSoal10.text = it.data[9].opsi3
+            dSoal10.text = it.data[9].opsi4
+        }
+
 
     }
 

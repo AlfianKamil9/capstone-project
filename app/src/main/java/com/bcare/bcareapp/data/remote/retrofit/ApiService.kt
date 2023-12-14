@@ -5,6 +5,7 @@ import com.bcare.bcareapp.data.remote.response.artikelDetail.DetailArtikelRespon
 import com.bcare.bcareapp.data.remote.response.login.LoginResponse
 import com.bcare.bcareapp.data.remote.response.quiz.ShowQuizResponse
 import com.bcare.bcareapp.data.remote.response.register.RegisterResponse
+import com.bcare.bcareapp.data.remote.response.user.UserResponse
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -42,5 +43,8 @@ interface ApiService {
 
     @GET("/api/v1/questions")
     fun getQuiz(@Header("Authorization") token: String): Call<ShowQuizResponse>
+
+    @GET("/api/v1/user")
+    fun getUserData(@Header("Authorization") token: String): Call<UserResponse>
 }
 
