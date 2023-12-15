@@ -1,5 +1,6 @@
 package com.bcare.bcareapp.data.remote.retrofit
 
+import com.bcare.bcareapp.data.remote.response.SubmitQuiz.SubmitQuizResponse
 import com.bcare.bcareapp.data.remote.response.artikel.ArtikelResponse
 import com.bcare.bcareapp.data.remote.response.artikelDetail.DetailArtikelResponse
 import com.bcare.bcareapp.data.remote.response.login.LoginResponse
@@ -8,6 +9,7 @@ import com.bcare.bcareapp.data.remote.response.quiz.ShowQuizResponse
 import com.bcare.bcareapp.data.remote.response.register.RegisterResponse
 import com.bcare.bcareapp.data.remote.response.user.UserResponse
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -51,5 +53,11 @@ interface ApiService {
 
     @DELETE("/api/v1/logout")
     fun logout(@Header("Authorization") authorization: String): Call<LogoutResponse>
+
+    @POST("/api/v1/submit-quiz")
+    fun submitQuiz(
+        @Header("Authorization") authorization: String,
+        @Body requestBody: Map<String, String>
+    ): Call<SubmitQuizResponse>
 }
 

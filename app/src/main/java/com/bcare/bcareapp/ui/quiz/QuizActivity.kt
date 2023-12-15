@@ -2,6 +2,7 @@ package com.bcare.bcareapp.ui.quiz
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -14,10 +15,12 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.lifecycleScope
 import com.bcare.bcareapp.R
 import com.bcare.bcareapp.data.local.preference.UserPreference
+import com.bcare.bcareapp.data.remote.response.SubmitQuiz.SubmitQuizResponse
 import com.bcare.bcareapp.data.remote.response.quiz.ShowQuizResponse
 import com.bcare.bcareapp.data.remote.retrofit.ApiConfig
 import com.bcare.bcareapp.data.remote.retrofit.ApiService
 import com.bcare.bcareapp.ui.main.MainActivity
+import com.bcare.bcareapp.ui.scan.ScanActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -182,20 +185,65 @@ class QuizActivity : AppCompatActivity() {
         tvSoal10 = findViewById(R.id.tvSoal10)
 
 
-//        btnScanFace = findViewById(R.id.btnScanFace)
-//
+        btnScanFace = findViewById(R.id.btnScanFace)
+
+        btnScanFace.setOnClickListener {
+            if (allQuestionsAnswered()) {
+                lifecycleScope.launchWhenStarted {
+                    preferences.getToken().collect { token ->
+                        if (token.isNotEmpty()) {
+                            submitQuizData(token)
+                        } else {
+                            Toast.makeText(this@QuizActivity, "Token is empty", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            } else {
+                Toast.makeText(this@QuizActivity, "Please answer all questions", Toast.LENGTH_SHORT).show()
+            }
+        }
+
 //        btnScanFace.setOnClickListener {
 //            // Create the request body for the POST method
 //            val requestBody = mapOf(
 //                "a1" to getSelectedAnswer(aSoal1, bSoal1, cSoal1, dSoal1),
 //                "a2" to getSelectedAnswer(aSoal2, bSoal2, cSoal2, dSoal2),
-//                // Repeat the above pattern for the remaining questions
+//                "a3" to getSelectedAnswer(aSoal3, bSoal3, cSoal3, dSoal3),
+//                "a4" to getSelectedAnswer(aSoal4, bSoal4, cSoal4, dSoal4),
+//                "a5" to getSelectedAnswer(aSoal5, bSoal5, cSoal5, dSoal5),
+//                "a6" to getSelectedAnswer(aSoal6, bSoal6, cSoal6, dSoal6),
+//                "a7" to getSelectedAnswer(aSoal7, bSoal7, cSoal7, dSoal7),
+//                "a8" to getSelectedAnswer(aSoal8, bSoal8, cSoal8, dSoal8),
+//                "a9" to getSelectedAnswer(aSoal9, bSoal9, cSoal9, dSoal9),
+//                "a10" to getSelectedAnswer(aSoal10, bSoal10, cSoal10, dSoal10),
 //            )
 //
 //            // Send the POST request with the created request body
-//            // TODO: Implement the code to send the POST request
+//            lifecycleScope.launchWhenStarted {
+//                preferences.getToken().collect { token ->
+//                    if (token.isNotEmpty()) {
+//                        submitQuizData(token, requestBody)
+//                    } else {
+//                        Toast.makeText(this@QuizActivity, "Token is empty", Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            }
 //        }
 
+    }
+
+    private fun allQuestionsAnswered(): Boolean {
+        // Check if all questions are answered
+        return isAnswered(aSoal1, bSoal1, cSoal1, dSoal1) &&
+                isAnswered(aSoal2, bSoal2, cSoal2, dSoal2) &&
+                isAnswered(aSoal3, bSoal3, cSoal3, dSoal3) &&
+                isAnswered(aSoal4, bSoal4, cSoal4, dSoal4) &&
+                isAnswered(aSoal5, bSoal5, cSoal5, dSoal5) &&
+                isAnswered(aSoal6, bSoal6, cSoal6, dSoal6) &&
+                isAnswered(aSoal7, bSoal7, cSoal7, dSoal7) &&
+                isAnswered(aSoal8, bSoal8, cSoal8, dSoal8) &&
+                isAnswered(aSoal9, bSoal9, cSoal9, dSoal9) &&
+                isAnswered(aSoal10, bSoal10, cSoal10, dSoal10)
     }
 
     private fun getQuizData(token: String) {
@@ -295,15 +343,98 @@ class QuizActivity : AppCompatActivity() {
 
     }
 
-//    private fun getSelectedAnswer(a: RadioButton, b: RadioButton, c: RadioButton, d: RadioButton): String {
-//        return when {
-//            a.isChecked -> "A"
-//            b.isChecked -> "B"
-//            c.isChecked -> "C"
-//            d.isChecked -> "D"
-//            else -> ""
-//        }
+//    private fun submitQuizData(token: String, requestBody: Map<String, String>) {
+//        // Make API request
+//        val call = quizApi.submitQuiz("Bearer $token", requestBody)
+//
+//        call.enqueue(object : Callback<SubmitQuizResponse> {
+//            override fun onResponse(call: Call<SubmitQuizResponse>, response: Response<SubmitQuizResponse>) {
+//                if (response.isSuccessful) {
+//                    val submitQuizResponse = response.body()
+//                    // Handle the successful response
+//                    Toast.makeText(this@QuizActivity, submitQuizResponse?.message, Toast.LENGTH_SHORT).show()
+//                } else {
+//                    // Handle unsuccessful response
+//                    val errorBody = response.errorBody()?.string()
+//                    val errorMessage = if (errorBody.isNullOrEmpty()) {
+//                        "Failed to submit quiz"
+//                    } else {
+//                        errorBody
+//                    }
+//                    Toast.makeText(this@QuizActivity, errorMessage, Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<SubmitQuizResponse>, t: Throwable) {
+//                // Handle failure
+//                Toast.makeText(this@QuizActivity, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
+//            }
+//        })
 //    }
+
+    private fun isAnswered(a: RadioButton, b: RadioButton, c: RadioButton, d: RadioButton): Boolean {
+        return a.isChecked || b.isChecked || c.isChecked || d.isChecked
+    }
+
+    private fun submitQuizData(token: String) {
+        // Create the request body for the POST method
+        val requestBody = mapOf(
+            "a1" to getSelectedAnswer(aSoal1, bSoal1, cSoal1, dSoal1),
+            "a2" to getSelectedAnswer(aSoal2, bSoal2, cSoal2, dSoal2),
+            "a3" to getSelectedAnswer(aSoal3, bSoal3, cSoal3, dSoal3),
+            "a4" to getSelectedAnswer(aSoal4, bSoal4, cSoal4, dSoal4),
+            "a5" to getSelectedAnswer(aSoal5, bSoal5, cSoal5, dSoal5),
+            "a6" to getSelectedAnswer(aSoal6, bSoal6, cSoal6, dSoal6),
+            "a7" to getSelectedAnswer(aSoal7, bSoal7, cSoal7, dSoal7),
+            "a8" to getSelectedAnswer(aSoal8, bSoal8, cSoal8, dSoal8),
+            "a9" to getSelectedAnswer(aSoal9, bSoal9, cSoal9, dSoal9),
+            "a10" to getSelectedAnswer(aSoal10, bSoal10, cSoal10, dSoal10)
+        )
+
+        // Make API request
+        val call = quizApi.submitQuiz("Bearer $token", requestBody)
+
+        call.enqueue(object : Callback<SubmitQuizResponse> {
+            override fun onResponse(call: Call<SubmitQuizResponse>, response: Response<SubmitQuizResponse>) {
+                if (response.isSuccessful) {
+                    val submitQuizResponse = response.body()
+                    // Handle the successful response
+                    Toast.makeText(this@QuizActivity, submitQuizResponse?.message, Toast.LENGTH_SHORT).show()
+                    // Navigate to ScanActivity
+                    navigateToScanActivity()
+                } else {
+                    // Handle unsuccessful response
+                    val errorBody = response.errorBody()?.string()
+                    val errorMessage = if (errorBody.isNullOrEmpty()) {
+                        "Failed to submit quiz"
+                    } else {
+                        errorBody
+                    }
+                    Toast.makeText(this@QuizActivity, errorMessage, Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<SubmitQuizResponse>, t: Throwable) {
+                // Handle failure
+                Toast.makeText(this@QuizActivity, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun navigateToScanActivity() {
+        val intent = Intent(this, ScanActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun getSelectedAnswer(a: RadioButton, b: RadioButton, c: RadioButton, d: RadioButton): String {
+        return when {
+            a.isChecked -> "A"
+            b.isChecked -> "B"
+            c.isChecked -> "C"
+            d.isChecked -> "D"
+            else -> ""
+        }
+    }
 
     companion object {
         const val EXTRA_TOKEN = "extra_token"
