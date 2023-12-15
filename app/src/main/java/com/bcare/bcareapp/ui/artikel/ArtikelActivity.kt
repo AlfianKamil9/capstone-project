@@ -68,7 +68,7 @@ class ArtikelActivity : AppCompatActivity() {
         binding.apply {
             Glide.with(root)
                 .load(detailArticle.image)
-                .placeholder(R.drawable.tulisan)
+                .placeholder(R.drawable.artikelimage)
                 .into(ivArtikelDetail)
             tvJudulArtikelDetail.text = detailArticle.title
             tvIsiArtikel.text = detailArticle.content

@@ -22,6 +22,7 @@ import com.bcare.bcareapp.data.remote.response.user.UserData
 import com.bcare.bcareapp.data.remote.response.user.UserResponse
 import com.bcare.bcareapp.data.remote.retrofit.ApiConfig
 import com.bcare.bcareapp.data.remote.retrofit.ApiService
+import com.bcare.bcareapp.ui.about.AboutActivity
 import com.bcare.bcareapp.ui.welcome.WelcomeActivity
 import kotlinx.coroutines.flow.first
 import retrofit2.Call
@@ -80,6 +81,14 @@ class ProfileFragment : Fragment() {
                 }
             }
         }
+
+        val btnAbout: Button = view.findViewById(R.id.btnAboutappProfile)
+        btnAbout.setOnClickListener { openAboutActivity(view) }
+    }
+
+    fun openAboutActivity(view: View) {
+        val intent = Intent(requireContext(), AboutActivity::class.java)
+        startActivity(intent)
     }
 
     private fun getUserData(token: String) {

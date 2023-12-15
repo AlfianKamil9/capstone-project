@@ -26,23 +26,29 @@
 
     // text
     <string name="tspalsh">BabyBlues Detection App</string>
-    <string name="twelcome">The best time to start knowing your Mental Health is now!</string>
+<!--    <string name="twelcome">The best time to start knowing your Mental Health is now!</string>-->
+    <string name="twelcome">Waktu terbaik untuk mulai mengetahui Kesehatan Mental Anda adalah sekarang!</string>
     <string name="tor">OR</string>
     <string name="tloginPage">Welcome to BCare! 🤱🍼👶</string>
     <string name="tsignupPage">Complete your data</string>
-    <string name="thello">Hello, </string>
-    <string name="thomePage">We wish you have a good day 😊</string>
+    <string name="thello">Hai👋🏻, </string>
+<!--    <string name="thomePage">We wish you have a good day 😊</string>-->
+    <string name="thomePage">Semoga hari mu menyenangkan 😊</string>
     <string name="invalid">Please enter the correct data</string>
-    <string name="notesScan">Notes: </string>
-    <string name="isiNotes">Please enter a face-on selfie photo. So,that the app can predict the expression correctly.</string>
-    <string name="rangeResult">Range of results : Safe, Medium, Acute </string>
-    <string name="result">Result: </string>
+<!--    <string name="notesScan">Notes: </string>-->
+    <string name="notesScan">Catatan: </string>
+<!--    <string name="isiNotes">Please enter a face-on selfie photo. So,that the app can predict the expression correctly.</string>-->
+    <string name="isiNotes">Silakan masukkan foto selfie wajah. Dengan demikian, aplikasi dapat memprediksi ekspresi dengan benar.</string>
+<!--    <string name="rangeResult">Range of results : Safe, Medium, Acute </string>-->
+    <string name="rangeResult">Kisaran hasil: Aman, Sedang, Akut </string>
+    <string name="result">Hasil: </string>
     <string name="resultnya">Resultnya</string>
-    <string name="suggestion">Suggestions: </string>
+    <string name="suggestion">Saran: </string>
     <string name="suggestionnya">Suggestionnya</string>
 
     //about app
-    <string name="aaplikasi">Becare is a mobile application to detect a person in order to know and be able to prevent the occurrence of Baby Blues. It can prevent infant death and abuse. And the user\'s immediate family can use the app to get information related to the user\'s mental health.</string>
+<!--    <string name="aaplikasi">Becare is a mobile application to detect a person in order to know and be able to prevent the occurrence of Baby Blues. It can prevent infant death and abuse. And the user\'s immediate family can use the app to get information related to the user\'s mental health.</string>-->
+    <string name="aaplikasi">Becare adalah aplikasi mobile untuk mendeteksi seseorang agar dapat mengetahui dan dapat mencegah terjadinya Baby Blues. Aplikasi ini dapat mencegah kematian dan kekerasan pada bayi. Dan keluarga terdekat pengguna dapat menggunakan aplikasi ini untuk mendapatkan informasi terkait kesehatan mental pengguna.</string>
     <string name="atim">Capstone Team CH2-PS134</string>
     <string name="bangkit">Bangkit Academy 2023 Batch 2</string>
     <string name="aanggota">Nama Anggota Tim:</string>
@@ -58,6 +64,10 @@
     <string name="lHome">Home</string>
     <string name="lProfile">Profile</string>
     <string name="lQuestion">Question</string>
+    <string name="lAbout">About App</string>
+    <string name="lLogin">Login</string>
+    <string name="lSignup">SignUp</string>
+    <string name="lScan">Scan</string>
 
     //artikel
     <string name="aArtikel">Artikel</string>
