@@ -1,5 +1,6 @@
 package com.bcare.bcareapp.data.local.preference
 
+import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.stringPreferencesKey
@@ -19,6 +20,12 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
     suspend fun saveToken(token: String) {
         dataStore.edit {preferences ->
             preferences[TOKEN] = token
+        }
+    }
+
+    suspend fun logout() {
+        dataStore.edit {
+            it.clear()
         }
     }
 

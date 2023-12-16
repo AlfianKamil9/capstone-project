@@ -82,6 +82,11 @@
     <string name="success">Success!</string>
     <string name="register_success">Signup Success, please login!</string>
     <string name="login">Login</string>
+    <string name="about_app">About App</string>
+    <string name="scan_face">Scan Face</string>
+    <string name="permission_granted">Permission Granted</string>
+    <string name="permission_denied">Permission Denied!</string>
+    <string name="image_empty">Image Empty!</string>
 
 
 </resources>

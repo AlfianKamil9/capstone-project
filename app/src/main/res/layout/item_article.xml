@@ -24,9 +24,9 @@
                 android:layout_alignParentTop="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/lovemom"
-                android:adjustViewBounds="true"
-                card_view:layout_constraintBottom_toBottomOf="parent"
                 card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintHorizontal_bias="1"
+                card_view:layout_constraintStart_toEndOf="@+id/txtArtikel"
                 card_view:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
@@ -36,25 +36,24 @@
                 android:layout_marginTop="2dp"
                 android:text="@string/aArtikel"
                 android:fontFamily="@font/boldpoppins"
-                android:textSize="10sp"
-                android:drawableStart="@drawable/reading"
+                android:textSize="12sp"
                 card_view:layout_constraintStart_toStartOf="parent"
                 card_view:layout_constraintEnd_toStartOf="@id/imgArtikel"
                 card_view:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/aArtikel"/>
+                tools:text="@string/aArtikel"
+                app:drawableStartCompat="@drawable/reading" />
 
             <TextView
                 android:id="@+id/tvJudulArtikel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
                 android:text="@string/aJudulArtikel"
                 android:textSize="13sp"
                 android:fontFamily="@font/boldpoppins"
-                card_view:layout_constraintStart_toStartOf="parent"
-                card_view:layout_constraintEnd_toStartOf="@id/imgArtikel"
-                card_view:layout_constraintTop_toBottomOf="@id/txtArtikel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtArtikel"
                 tools:text="@string/aJudulArtikel"/>
 
             <TextView
@@ -62,15 +61,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:layout_marginEnd="10dp"
-                android:text="@string/aJudulArtikel"
-                android:textSize="12sp"
                 android:fontFamily="@font/regularpoppins"
                 android:maxLines="3"
-                card_view:layout_constraintStart_toStartOf="parent"
-                card_view:layout_constraintEnd_toStartOf="@id/imgArtikel"
-                card_view:layout_constraintTop_toBottomOf="@id/tvJudulArtikel"
-                tools:text="@string/aIsiArtikel"/>
+                android:text="@string/aJudulArtikel"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/imgArtikel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulArtikel"
+                tools:text="@string/aIsiArtikel" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
