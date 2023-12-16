@@ -24,7 +24,6 @@ class ListArtikelAdapter(private val listArticle: List<DataItem>) :
 
     override fun getItemCount(): Int = listArticle.size
 
-
     inner class ArticleViewHolder(private val binding: ItemArticleBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(article: DataItem) {

@@ -1,6 +1,5 @@
 package com.bcare.bcareapp.ui.quiz
 
-import android.Manifest
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -19,13 +18,11 @@ import com.bcare.bcareapp.data.remote.response.SubmitQuiz.SubmitQuizResponse
 import com.bcare.bcareapp.data.remote.response.quiz.ShowQuizResponse
 import com.bcare.bcareapp.data.remote.retrofit.ApiConfig
 import com.bcare.bcareapp.data.remote.retrofit.ApiService
-import com.bcare.bcareapp.ui.main.MainActivity
+import com.bcare.bcareapp.databinding.ActivityQuizBinding
 import com.bcare.bcareapp.ui.scan.ScanActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class QuizActivity : AppCompatActivity() {
 
@@ -100,9 +97,12 @@ class QuizActivity : AppCompatActivity() {
     private val preferences by lazy {
         UserPreference.getInstance(this@QuizActivity.dataStore)
     }
+
+    private lateinit var binding: ActivityQuizBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quiz)
+        binding = ActivityQuizBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 //        val retrofit = Retrofit.Builder()
 //            .baseUrl("http://34.128.78.237:3000/")
@@ -184,8 +184,8 @@ class QuizActivity : AppCompatActivity() {
         tvSoal9 = findViewById(R.id.tvSoal9)
         tvSoal10 = findViewById(R.id.tvSoal10)
 
-
         btnScanFace = findViewById(R.id.btnScanFace)
+
 
         btnScanFace.setOnClickListener {
             if (allQuestionsAnswered()) {
@@ -203,31 +203,21 @@ class QuizActivity : AppCompatActivity() {
             }
         }
 
+//        scanFace()
+
+
+//        btnScanFace = findViewById(R.id.btnScanFace)
+//
 //        btnScanFace.setOnClickListener {
 //            // Create the request body for the POST method
 //            val requestBody = mapOf(
 //                "a1" to getSelectedAnswer(aSoal1, bSoal1, cSoal1, dSoal1),
 //                "a2" to getSelectedAnswer(aSoal2, bSoal2, cSoal2, dSoal2),
-//                "a3" to getSelectedAnswer(aSoal3, bSoal3, cSoal3, dSoal3),
-//                "a4" to getSelectedAnswer(aSoal4, bSoal4, cSoal4, dSoal4),
-//                "a5" to getSelectedAnswer(aSoal5, bSoal5, cSoal5, dSoal5),
-//                "a6" to getSelectedAnswer(aSoal6, bSoal6, cSoal6, dSoal6),
-//                "a7" to getSelectedAnswer(aSoal7, bSoal7, cSoal7, dSoal7),
-//                "a8" to getSelectedAnswer(aSoal8, bSoal8, cSoal8, dSoal8),
-//                "a9" to getSelectedAnswer(aSoal9, bSoal9, cSoal9, dSoal9),
-//                "a10" to getSelectedAnswer(aSoal10, bSoal10, cSoal10, dSoal10),
+//                // Repeat the above pattern for the remaining questions
 //            )
 //
 //            // Send the POST request with the created request body
-//            lifecycleScope.launchWhenStarted {
-//                preferences.getToken().collect { token ->
-//                    if (token.isNotEmpty()) {
-//                        submitQuizData(token, requestBody)
-//                    } else {
-//                        Toast.makeText(this@QuizActivity, "Token is empty", Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//            }
+//
 //        }
 
     }
@@ -245,6 +235,13 @@ class QuizActivity : AppCompatActivity() {
                 isAnswered(aSoal9, bSoal9, cSoal9, dSoal9) &&
                 isAnswered(aSoal10, bSoal10, cSoal10, dSoal10)
     }
+
+//    private fun scanFace(){
+//        binding.btnScanFace.setOnClickListener{
+//            val intent = Intent(this@QuizActivity, ScanActivity::class.java)
+//            startActivity(intent)
+//        }
+//    }
 
     private fun getQuizData(token: String) {
         // Make API request

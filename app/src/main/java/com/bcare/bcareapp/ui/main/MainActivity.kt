@@ -5,8 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
-import androidx.databinding.DataBindingUtil.setContentView
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -34,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupFab()
+//        menuItem()
 
         //ini untuk action bar
         supportActionBar?.hide()
@@ -66,6 +65,31 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra(QuizActivity.EXTRA_TOKEN, token)
         startActivity(intent)
     }
+
+
+
+//    private fun navigateToProfilePage() {
+//        val token = intent.getStringExtra(EXTRA_TOKEN)
+//        val intent = Intent(this@MainActivity, ProfileActivity::class.java)
+//        intent.putExtra(QuizActivity.EXTRA_TOKEN, token)
+//        startActivity(intent)
+//    }
+//
+//    private fun menuItem(){
+//        binding.bottomAppBar.setOnMenuItemClickListener{
+//            when (it.itemId) {
+//                R.id.navigation_profile -> {
+//                    val token = intent.getStringExtra(EXTRA_TOKEN)
+//                    val intent = Intent(this@MainActivity, ProfileActivity::class.java)
+//                    intent.putExtra(ProfileActivity.EXTRA_TOKEN, token)
+//                    startActivity(intent)
+//                    true
+//                }
+//
+//                else -> super.onContextItemSelected(it)
+//            }
+//        }
+//    }
 
     companion object {
         const val EXTRA_TOKEN = "extra_token"
