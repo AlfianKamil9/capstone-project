@@ -34,8 +34,9 @@
         android:id="@+id/tlUsernameSignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="15dp"
         tools:ignore="MissingConstraints"
+        app:hintEnabled="false"
         app:layout_constraintTop_toBottomOf="@+id/tvSignup">
 
         <EditText
@@ -62,7 +63,9 @@
         android:id="@+id/tlEmailSignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
         tools:ignore="MissingConstraints"
+        app:hintEnabled="false"
         app:layout_constraintTop_toBottomOf="@+id/tlUsernameSignup">
 
         <EditText
@@ -86,7 +89,9 @@
         android:id="@+id/tlFamilyEmailSignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
         tools:ignore="MissingConstraints"
+        app:hintEnabled="false"
         app:layout_constraintTop_toBottomOf="@+id/tlEmailSignup">
 
         <EditText
@@ -110,8 +115,10 @@
         android:id="@+id/tlPasswordSignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
         tools:ignore="MissingConstraints"
         app:passwordToggleEnabled="true"
+        app:hintEnabled="false"
         app:layout_constraintTop_toBottomOf="@+id/tlFamilyEmailSignup">
 
         <EditText
@@ -135,7 +142,9 @@
         android:id="@+id/tlConfirmPasswordSignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
         tools:ignore="MissingConstraints"
+        app:hintEnabled="false"
         app:passwordToggleEnabled="true"
         app:layout_constraintTop_toBottomOf="@+id/tlPasswordSignup">
 
