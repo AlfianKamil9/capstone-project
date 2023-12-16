@@ -29,15 +29,9 @@ class ListArtikelAdapter(private val listArticle: List<DataItem>) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(article: DataItem) {
             val subtitle = article.subTitle
-//            val imageUrl = article.image
             val desc = article.content
             binding.tvJudulArtikel.text = subtitle
             binding.tvIsiArtikel.text = desc
-
-//            Glide.with(binding.root)
-//                .load(imageUrl)
-//                .placeholder(R.drawable.lovemom)
-//                .into(binding.imgArtikel)
 
             val imageResourceId = getPlaceholderByPosition(adapterPosition)
 
@@ -60,7 +54,6 @@ class ListArtikelAdapter(private val listArticle: List<DataItem>) :
             R.drawable.artikelimage,
         )
 
-        // Pastikan untuk menghindari IndexOutOfBoundsException
         return drawables.getOrElse(position) { R.drawable.lovemom }
     }
 

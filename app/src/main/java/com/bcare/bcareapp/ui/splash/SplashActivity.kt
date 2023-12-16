@@ -7,8 +7,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.bcare.bcareapp.R
-import com.bcare.bcareapp.ui.login.LoginActivity
-import com.bcare.bcareapp.ui.main.MainActivity
 import com.bcare.bcareapp.ui.welcome.WelcomeActivity
 
 @SuppressLint("CustomSplashScreen")

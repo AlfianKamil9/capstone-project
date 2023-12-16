@@ -1,9 +1,9 @@
 package com.bcare.bcareapp.data.remote.retrofit
 
+import com.bcare.bcareapp.data.remote.response.SubmitImage.ResponseModel
 import com.bcare.bcareapp.data.remote.response.SubmitQuiz.SubmitQuizResponse
 import com.bcare.bcareapp.data.remote.response.artikel.ArtikelResponse
 import com.bcare.bcareapp.data.remote.response.artikelDetail.DetailArtikelResponse
-import com.bcare.bcareapp.data.remote.response.scan.ScanResponse
 import com.bcare.bcareapp.data.remote.response.login.LoginResponse
 import com.bcare.bcareapp.data.remote.response.logout.LogoutResponse
 import com.bcare.bcareapp.data.remote.response.quiz.ShowQuizResponse
@@ -65,4 +65,11 @@ interface ApiService {
         @Body requestBody: Map<String, String>
     ): Call<SubmitQuizResponse>
 
+    @Multipart
+    @POST("/api/v1/submit-image")
+    suspend fun submitImage(
+        @Part file: MultipartBody.Part,
+        @Header("Authorization") authorization: String
+    ): Response<ResponseModel>
 }
+
