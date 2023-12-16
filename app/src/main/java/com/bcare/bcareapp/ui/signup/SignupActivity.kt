@@ -30,18 +30,18 @@ class SignupActivity : AppCompatActivity() {
         setupAction()
     }
     private fun processRegister(body: RegisterResponse) {
-            AlertDialog.Builder(this).apply {
-                setTitle(getString(R.string.success))
-                setMessage(getString(R.string.register_success))
-                setPositiveButton(getString(R.string.login)) { _, _ ->
-                    val intent = Intent(this@SignupActivity, LoginActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                    startActivity(intent)
-                    finish()
-                }
-                create()
-                show()
+        AlertDialog.Builder(this).apply {
+            setTitle(getString(R.string.success))
+            setMessage(getString(R.string.register_success))
+            setPositiveButton(getString(R.string.login)) { _, _ ->
+                val intent = Intent(this@SignupActivity, LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                finish()
             }
+            create()
+            show()
+        }
 
     }
 

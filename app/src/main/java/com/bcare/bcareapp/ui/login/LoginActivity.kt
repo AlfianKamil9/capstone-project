@@ -45,19 +45,19 @@ class LoginActivity : AppCompatActivity() {
 
     private fun processLogin(body: LoginResponse) {
         try {
-                val preferences = UserPreference.getInstance(dataStore)
-                AlertDialog.Builder(this).apply {
-                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                    intent.putExtra(MainActivity.EXTRA_TOKEN, body.token)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                    startActivity(intent)
-                    CoroutineScope(Dispatchers.Main).launch {
-                        preferences.saveToken(body.token)
-                    }
-                    finish()
-                    create()
-                    show()
+            val preferences = UserPreference.getInstance(dataStore)
+            AlertDialog.Builder(this).apply {
+                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                intent.putExtra(MainActivity.EXTRA_TOKEN, body.token)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                CoroutineScope(Dispatchers.Main).launch {
+                    preferences.saveToken(body.token)
                 }
+                finish()
+                create()
+                show()
+            }
 
         } catch (e: HttpException) {
             // Handle the HTTP exception by showing an error message

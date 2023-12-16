@@ -70,39 +70,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/tvOrWelcome"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:text="@string/tor"-->
-<!--        android:fontFamily="@font/semiboldpoppins"-->
-<!--        android:textSize="16sp"-->
-<!--        android:gravity="center"-->
-<!--        android:textColor="@color/grey2"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btnLoginWelcome"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvOrWelcome"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:text="@string/tor"-->
+    <!--        android:fontFamily="@font/semiboldpoppins"-->
+    <!--        android:textSize="16sp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:textColor="@color/grey2"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/btnLoginWelcome"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
 
 
 
-<!--    <com.google.android.gms.common.SignInButton-->
-<!--        android:id="@+id/btnGoogleWelcome"-->
-<!--        android:layout_width="350dp"-->
-<!--        android:layout_height="53dp"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/tvOrWelcome"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
+    <!--    <com.google.android.gms.common.SignInButton-->
+    <!--        android:id="@+id/btnGoogleWelcome"-->
+    <!--        android:layout_width="350dp"-->
+    <!--        android:layout_height="53dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tvOrWelcome"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
 
-<!--    <com.google.android.gms.common.SignInButton-->
-<!--        android:id="@+id/signInButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <!--    <com.google.android.gms.common.SignInButton-->
+    <!--        android:id="@+id/signInButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 
     <ProgressBar

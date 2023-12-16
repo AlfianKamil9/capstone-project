@@ -44,7 +44,7 @@
             <ImageView
                 android:id="@+id/ImgUpload"
                 android:layout_width="270dp"
-                android:layout_height="270dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
@@ -56,29 +56,15 @@
 
             <Button
                 android:id="@+id/btnCamera"
-                android:layout_width="66dp"
-                android:layout_height="68dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/bg_default"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="8dp"
                 android:drawableStart="@drawable/ic_camera"
                 android:padding="19dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.672"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ImgUpload" />
-
-            <Button
-                android:id="@+id/btnGallery"
-                android:layout_width="66dp"
-                android:layout_height="68dp"
-                android:layout_marginTop="12dp"
                 android:background="@drawable/bg_default"
-                android:drawableStart="@drawable/ic_gallery"
-                android:padding="19dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.37"
+                app:layout_constraintTop_toBottomOf="@id/ImgUpload"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ImgUpload" />
+                app:layout_constraintEnd_toEndOf="parent"/>
 
             <Button
                 android:id="@+id/btnUpload"
@@ -105,6 +91,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ProgressBar
+                android:id="@+id/progressBarScan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/blue"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
@@ -122,27 +119,27 @@
             android:layout_marginHorizontal="32dp"
             android:paddingBottom="32dp">
 
-            <TextView
-                android:id="@+id/txtrange"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/rangeResult"
-                android:textSize="12sp"
-                android:textColor="#A90C0C"
-                android:fontFamily="@font/semiboldpoppins"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/txtrange"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:text="@string/rangeResult"-->
+            <!--                android:textSize="12sp"-->
+            <!--                android:textColor="#A90C0C"-->
+            <!--                android:fontFamily="@font/semiboldpoppins"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent" />-->
 
             <ImageView
                 android:id="@+id/ImgResult"
                 android:layout_width="270dp"
-                android:layout_height="270dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/lovemom"
-                app:layout_constraintTop_toBottomOf="@id/txtrange"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:ignore="ContentDescription" />
@@ -151,6 +148,7 @@
                 android:id="@+id/txtResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="@string/result"
                 android:textSize="20sp"
@@ -165,6 +163,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/resultnya"
+                android:textColor="@color/blue2"
                 android:textSize="33sp"
                 android:fontFamily="@font/extraboldoppins"
                 app:layout_constraintTop_toBottomOf="@id/txtResult"
@@ -175,7 +174,7 @@
                 android:id="@+id/txtSuggestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="25dp"
                 android:text="@string/suggestion"
                 android:textSize="15sp"
                 android:fontFamily="@font/boldpoppins"

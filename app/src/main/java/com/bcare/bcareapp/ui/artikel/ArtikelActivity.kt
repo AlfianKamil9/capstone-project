@@ -3,6 +3,7 @@ package com.bcare.bcareapp.ui.artikel
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -11,6 +12,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.bcare.bcareapp.R
 import com.bcare.bcareapp.data.remote.response.artikelDetail.Data
+import com.bcare.bcareapp.data.remote.response.artikelDetail.DetailArtikelResponse
 import com.bcare.bcareapp.databinding.ActivityArtikelBinding
 import com.bcare.bcareapp.ui.home.ArtikelViewModel
 import com.bcare.bcareapp.ui.home.ArtikelViewModelFactory

@@ -11,6 +11,7 @@ import com.bcare.bcareapp.data.remote.response.register.RegisterResponse
 import com.bcare.bcareapp.data.remote.response.user.UserResponse
 import okhttp3.MultipartBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.Field
@@ -49,13 +50,6 @@ interface ApiService {
         @Path("id") id: Int
     ): DetailArtikelResponse
 
-    @Multipart
-    @POST("api/v1/submit-image")
-    suspend fun postSubmitImage(
-        @Part image: MultipartBody.Part,
-    ): ScanResponse
-
-
     @GET("/api/v1/questions")
     fun getQuiz(@Header("Authorization") token: String): Call<ShowQuizResponse>
 
@@ -70,5 +64,5 @@ interface ApiService {
         @Header("Authorization") authorization: String,
         @Body requestBody: Map<String, String>
     ): Call<SubmitQuizResponse>
-}
 
+}

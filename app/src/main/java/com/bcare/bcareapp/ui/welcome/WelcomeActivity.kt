@@ -23,30 +23,30 @@ class WelcomeActivity : AppCompatActivity() {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "tokenDataStore")
 
-//    private val loginViewModel: LoginViewModel by viewModels {
+    //    private val loginViewModel: LoginViewModel by viewModels {
 //        ViewModelFactory.get
 //    }
     override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    val preferences = UserPreference.getInstance(dataStore)
-    CoroutineScope(Dispatchers.Main).launch {
-        preferences.getToken().collect {
-            if (it == "") {
-                binding = ActivityWelcomeBinding.inflate(layoutInflater)
-                setContentView(binding.root)
-                setupAction()
-                playAnimation()
-                playAlphaAnimation()
-                supportActionBar?.hide()
-            } else {
-                val intent = Intent(this@WelcomeActivity, MainActivity::class.java)
-                intent.putExtra(MainActivity.EXTRA_TOKEN, it)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                startActivity(intent)
+        super.onCreate(savedInstanceState)
+        val preferences = UserPreference.getInstance(dataStore)
+        CoroutineScope(Dispatchers.Main).launch {
+            preferences.getToken().collect {
+                if (it == "") {
+                    binding = ActivityWelcomeBinding.inflate(layoutInflater)
+                    setContentView(binding.root)
+                    setupAction()
+                    playAnimation()
+                    playAlphaAnimation()
+                    supportActionBar?.hide()
+                } else {
+                    val intent = Intent(this@WelcomeActivity, MainActivity::class.java)
+                    intent.putExtra(MainActivity.EXTRA_TOKEN, it)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
+                }
             }
         }
     }
-}
 
 
     companion object {

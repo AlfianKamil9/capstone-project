@@ -4,16 +4,12 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.bcare.bcareapp.data.local.result.Result
-import com.bcare.bcareapp.data.remote.response.scan.ScanResponse
 import com.bcare.bcareapp.data.remote.response.login.LoginResponse
 import com.bcare.bcareapp.data.remote.response.register.RegisterResponse
 import com.bcare.bcareapp.data.remote.retrofit.ApiService
-import okhttp3.MultipartBody
-
 
 class UserRepository(
     private val apiService: ApiService) {
-
 
     fun postLogin(
         email: String,
@@ -45,20 +41,7 @@ class UserRepository(
         }
     }
 
-    fun postSubmitImage(
-        image: MultipartBody.Part,
-    ): LiveData<Result<ScanResponse>> = liveData{
-        emit(Result.Loading)
-        try {
-            val response = apiService.postSubmitImage(image)
-            emit(Result.Success(response))
-        } catch (e: Exception) {
-            Log.e("ScanViewModel", "postSubmitImage: ${e.message.toString()}")
-            emit(Result.Error(e.message.toString()))
-        }
-    }
-
-//    fun  userLogout(): LiveData<Result<String>> = liveData {
+//    fun  userLogout(): Flow<Result<String>> = flow {
 //        emit(Result.Loading)
 //        userPreference.logout()
 //        emit(Result.Success("Success"))
