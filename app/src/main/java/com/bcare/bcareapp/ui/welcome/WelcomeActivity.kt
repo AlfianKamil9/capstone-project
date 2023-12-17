@@ -23,9 +23,6 @@ class WelcomeActivity : AppCompatActivity() {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "tokenDataStore")
 
-    //    private val loginViewModel: LoginViewModel by viewModels {
-//        ViewModelFactory.get
-//    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val preferences = UserPreference.getInstance(dataStore)

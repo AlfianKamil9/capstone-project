@@ -41,23 +41,4 @@ class UserRepository(
         }
     }
 
-//    fun  userLogout(): Flow<Result<String>> = flow {
-//        emit(Result.Loading)
-//        userPreference.logout()
-//        emit(Result.Success("Success"))
-//    }
-
-//    fun getDataUser(
-//        token = String
-//    ): Flow<Result<Data>
-
-//    companion object {
-//        private var instance: UserRepository? = null
-//        fun getInstace(
-//            apiService: ApiService, userPreference: UserPreference
-//        ): UserRepository = instance ?: synchronized(this) {
-//            instance ?: UserRepository(apiService, userPreference)
-//        }.also { instance = it }
-//    }
-
 }

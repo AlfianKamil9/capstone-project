@@ -21,17 +21,9 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.NewInst
                 LoginViewModel(Injection.provideRepository(context)) as T
             }
 
-//            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
-//                MainViewModel(Injection.provideRepository(context)) as T
-//            }
-//
             modelClass.isAssignableFrom(SignupViewModel::class.java) -> {
                 SignupViewModel(Injection.provideRepository(context)) as T
             }
-//
-//            modelClass.isAssignableFrom(MapsViewModel::class.java) -> {
-//                MapsViewModel(Injection.provideRepository(context)) as T
-//            }
 
             else -> throw IllegalArgumentException("Unknown ViewModel Class")
         }
