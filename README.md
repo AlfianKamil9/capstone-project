@@ -8,9 +8,9 @@ Lack of social support, whether from close family, friends, or mental health pro
 
 ### What are the advantages of your capstone project? ###
 1. Early Detection of Baby Blues:
-We hope that our project can facilitate early detection of symptoms of baby blues in postnatal mothers to prevent this syndrome becoming more severe.
+   We hope that our project can facilitate early detection of symptoms of baby blues in postnatal mothers to prevent this syndrome becoming more severe.
 2. Educational Component
-Our project provides information about baby blues and mental health issues through articles sourced from professionals, hopefully this project can contribute to increased awareness and understanding of baby blues syndrome.
+   Our project provides information about baby blues and mental health issues through articles sourced from professionals, hopefully this project can contribute to increased awareness and understanding of baby blues        syndrome.
 
 
 ## Our Teams
