@@ -1,6 +1,17 @@
 ﻿# Capstone Project Repository
 ![Alt text](https://github.com/AlfianKamil9/capstone-project/assets/113516282/ddf2137d-71ac-46cd-8c37-e949869c0a1c) 
 This repository was created for documentation and a collaborative platform in the Bangkit Capstone Project 2023 Batch 2, this is a back-end repository that use Node.js and Google CLoud Platform.
+## Our Teams
+| Cohort ID | Name | Roles | University |
+| ---    |  ---   | ---  | ---         |
+| C006BSY4334 |  Rifqi Alfiansyah Kamil  | Cloud Computing  |   Universitas Brawijaya  |
+| C006BSY3443 |  David Kurniawan  | Cloud Computing | Uviversitas Brawijaya |
+| M463BSY1446 | Agil Yudha Tri Anggara | Machine Learning | Universitas PGRI Madiun |
+| M006BSY0071 | Mochamad Dimas Putra Hermawan | Machine Learning | Universitas Brawijaya |
+| M674BSY0865 | Nur Azmi Hidayat | Machine Learning | Universitas Borneo Tarakan |
+| A694BSX2079 | Mulia Saphira | Mobile Development | Universitas Multi Data Palembang |
+| A132BSY2461 | Muhammad Dwiky Alfira | Mobile Development | Politeknik Negeri Padang |
+
 ## Dependencies Project (origin branch)
 - Express Javascript Framework
 - JsonWebToken
