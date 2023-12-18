@@ -1,6 +1,18 @@
 ﻿# BCare - Bangkit Capstone Project 2023 - [CH2-PS134] 
 ![Alt text](https://github.com/AlfianKamil9/capstone-project/assets/113516282/ddf2137d-71ac-46cd-8c37-e949869c0a1c) 
 This repository was created for documentation and a collaborative platform in the Bangkit Capstone Project 2023 Batch 2, this is a back-end repository that use Node.js and Google CLoud Platform.
+## What is BCare ?
+Baby blues are emotional symptoms that some mothers experience after giving birth to a baby. They can be attributed to significant hormonal changes during pregnancy and childbirth, marked by increased levels of estrogen and progesterone. Mothers undergoing baby blues may feel stressed, irritable, cry frequently, and find it challenging to care for their babies.
+
+Lack of social support, whether from close family, friends, or mental health professionals, can exacerbate a mother's symptoms of baby blues. In response to this challenge, we've developed a solution. Our approach involves detecting the symptoms of baby blues in a mother and promptly sending notifications to her closest family.
+
+`What are the advantages of your capstone project?`
+Early Detection of Baby Blues:
+We hope that our project can facilitate early detection of symptoms of baby blues in postnatal mothers to prevent this syndrome becoming more severe.
+Educational Component
+Our project provides information about baby blues and mental health issues through articles sourced from professionals, hopefully this project can contribute to increased awareness and understanding of baby blues syndrome.
+
+
 ## Our Teams
 | Cohort ID | Name | Roles | University |
 | ---    |  ---   | ---  | ---         |
