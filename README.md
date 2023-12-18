@@ -1,5 +1,5 @@
 ﻿# BCare - Bangkit Capstone Project 2023 - [CH2-PS134] 
-![Alt text](https://github.com/AlfianKamil9/capstone-project/assets/113516282/ddf2137d-71ac-46cd-8c37-e949869c0a1c) 
+![Alt text](https://storage.googleapis.com/models-mechine-learning-cnn/Group%2091%20(1).png) 
 This repository was created for documentation and a collaborative platform in the Bangkit Capstone Project 2023 Batch 2, this is a back-end repository that use Node.js and Google CLoud Platform.
 ## What is BCare ?
 Baby blues are emotional symptoms that some mothers experience after giving birth to a baby. They can be attributed to significant hormonal changes during pregnancy and childbirth, marked by increased levels of estrogen and progesterone. Mothers undergoing baby blues may feel stressed, irritable, cry frequently, and find it challenging to care for their babies.
