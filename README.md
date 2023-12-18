@@ -6,10 +6,10 @@ Baby blues are emotional symptoms that some mothers experience after giving birt
 
 Lack of social support, whether from close family, friends, or mental health professionals, can exacerbate a mother's symptoms of baby blues. In response to this challenge, we've developed a solution. Our approach involves detecting the symptoms of baby blues in a mother and promptly sending notifications to her closest family.
 
-`What are the advantages of your capstone project?`
-Early Detection of Baby Blues:
+####What are the advantages of your capstone project?####
+1. Early Detection of Baby Blues:
 We hope that our project can facilitate early detection of symptoms of baby blues in postnatal mothers to prevent this syndrome becoming more severe.
-Educational Component
+2. Educational Component
 Our project provides information about baby blues and mental health issues through articles sourced from professionals, hopefully this project can contribute to increased awareness and understanding of baby blues syndrome.
 
 
