@@ -1,5 +1,6 @@
 ﻿# Capstone Project Repository
- This repository was created for documentation and a collaborative platform in the Bangkit Capstone Project 2023 Batch 2, this is a back-end repository that use Node.js and Google CLoud Platform.
+![Alt text](https://github.com/AlfianKamil9/capstone-project/assets/113516282/ddf2137d-71ac-46cd-8c37-e949869c0a1c) 
+This repository was created for documentation and a collaborative platform in the Bangkit Capstone Project 2023 Batch 2, this is a back-end repository that use Node.js and Google CLoud Platform.
 ## Dependencies Project (origin branch)
 - Express Javascript Framework
 - JsonWebToken
