@@ -7,7 +7,7 @@ This repository was created for documentation and a collaborative platform in th
 ## Demo App
 Get the Bcare app Demo video [Bcare Mobile Android Demo App](https://drive.google.com/file/d/1SQeLZps5pfP6un4Is-hUnDjD_RsedOIl/view?usp=drivesdk).
 
-## Technologies Used
+## What we use
 - Mobile Android Development: The Bcare application is developed using Kotlin programming language and Android Studio Plardorm
 - XML Layout: To implement design UI/UX we made before in figma to code of the application, we created using XML layout files.
 - Retrofit: Retrofit to fetch and display data from the API.
