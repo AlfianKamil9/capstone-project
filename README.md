@@ -2,7 +2,6 @@
 # BCare - Bangkit Capstone Project 2023 - [CH2-PS134]
 
 <div style="display: flex; gap: 50px;">
-  <img src="/python.png" alt="image" width="200" height="auto">
   <img src="/tensorflow.png" alt="image" width="200" height="auto">
 </div>
 
