@@ -1,11 +1,9 @@
 ﻿# Machine Learning
 # BCare - Bangkit Capstone Project 2023 - [CH2-PS134]
 
-
 <div style="display: flex; gap: 50px; margin-top: 20px; margin-bottom: 20px">
   <img src="/tensorflow.png" alt="image" width="300" height="300">
 </div>
-
 
 This repository was created to explain the **Machine Learning** part of the Bcare project, where the process was created using the Python language and primarily using the Tensorflow package.
 
@@ -38,7 +36,7 @@ For the model form, we used a regular neural network with a structure like this,
 
 which resulted in a final accuracy of 99.1%.
 
-[Link Model Form untuk Deployment]()
+[Link Model Form untuk Deployment](https://drive.google.com/drive/folders/1-RzDhIA9HAsLO06mPPswGuCgXRlvVa9j?usp=sharing)
 
 ### Modeling Image
 For image modeling, we use a Convolutional Neural Network inspired by the ResNet50 structure with a structure like this, 
@@ -47,4 +45,4 @@ For image modeling, we use a Convolutional Neural Network inspired by the ResNet
 
 which produces a final accuracy of 97.2%.
 
-[Link Model Image untuk Deployment]()
+[Link Model Image untuk Deployment](https://drive.google.com/drive/folders/1-0HUsxUBi5aFi8nFtRr7BiGgKYS4Q_nM?usp=sharing)
