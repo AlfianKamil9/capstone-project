@@ -32,7 +32,7 @@ This repository was created to explain the **Machine Learning** part of the Bcar
 ### Modeling Form
 For the model form, we used a regular neural network with a structure like this,
 
-![gambarstruktur]()
+<img src="/124.png" alt="gambarstrukturmodelform" width="600" height="600">
 
 which resulted in a final accuracy of 99.1%.
 
@@ -41,7 +41,7 @@ which resulted in a final accuracy of 99.1%.
 ### Modeling Image
 For image modeling, we use a Convolutional Neural Network inspired by the ResNet50 structure with a structure like this, 
 
-![gambarstruktur2]()
+<img src="/123.png" alt="gambarstrukturmodelimage" width="600" height="600">
 
 which produces a final accuracy of 97.2%.
 
