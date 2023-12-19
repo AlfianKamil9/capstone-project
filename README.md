@@ -1,8 +1,8 @@
 ﻿# Machine Learning
 # BCare - Bangkit Capstone Project 2023 - [CH2-PS134]
 
-<img src="/python.png" alt="image" width="300" height="auto">
-<img src="/tensorflow.png" alt="image" width="300" height="auto">
+<img src="/python.png" alt="image" width="200" height="auto">
+<img src="/tensorflow.png" alt="image" width="200" height="auto">
 
 This repository was created to explain the **Machine Learning** part of the Bcare project, where the process was created using the Python language and primarily using the Tensorflow package.
 
