@@ -3,7 +3,7 @@
 
 
 <div style="display: flex; gap: 50px;">
-  <img src="/tensorflow.png" alt="image" width="400" height="400">
+  <img src="/tensorflow.png" alt="image" width="400" height="300">
 </div>
 
 
