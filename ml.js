@@ -50,11 +50,11 @@ function predict(modelImage, modelForm, inputImage, inputForm) {
     console.log('Hasil Combine :', combine);
 
     // AVARAGE
-    const averageProbabilitas = combine.mean(1).dataSync();
+    const averageProbabilitas = combine.mean(0).dataSync();
     console.log('Average Probabilitas :', averageProbabilitas);
 
     // CHOOSE PROBABILITAS
-    const probabilitas = tfjs.argMax(averageProbabilitas).dataSync()[1];
+    const probabilitas = tfjs.argMax(averageProbabilitas).dataSync()[0];
     console.log('Probabilitas :', probabilitas);
     const finalResult = kondisi[probabilitas];
 
