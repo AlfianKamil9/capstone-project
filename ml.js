@@ -5,7 +5,7 @@ let model;
 
 async function loadModel() {
   try {
-    const modelUrl = `https://storage.googleapis.com/models-mechine-learning-ch2-ps134/model_model2/model.json`;
+    const modelUrl = `https://storage.googleapis.com/storage-tugas-akhir-gcloud/model-machine-learning/form-model/model.json`;
     console.log('Please Waiting... Model for Quiz is Loaded');
     const model = await tfjs.loadLayersModel(modelUrl);
     return model;
@@ -16,7 +16,7 @@ async function loadModel() {
 
 async function loadModelImage() {
   try {
-    const model = `https://storage.googleapis.com/models-mechine-learning-cnn/cnn_1/model.json`;
+    const model = `https://storage.googleapis.com/storage-tugas-akhir-gcloud/model-machine-learning/image-model/model.json`;
     console.log('Please Waiting... Model for Image is Loaded');
     const model2 = await tfjs.loadLayersModel(model);
     return model2;
@@ -65,27 +65,6 @@ function predict(modelImage, modelForm, inputImage, inputForm) {
     console.log(error);
   }
 }
-
-// function predictImage(model, input, form) {
-//   try {
-//     const tensor = tfjs.node.decodeImage(input).resizeNearestNeighbor([200, 200]).mean(2).expandDims(2);
-//     const tensor2 = tensor.toFloat().div(tfjs.scalar(255));
-//     const tensor3 = tensor2.expandDims(0);
-//     console.log(tensor3);
-//     const arg = model.predict(tensor3);
-//     console.log(arg);
-//     const argIndex = arg.argMax(1).dataSync()[0];
-//     console.log(argIndex);
-//     //
-//     const finalpredict = argIndex.add(form).div(2);
-//     console.log('FINAL PREDICT:', finalpredict);
-//     const answer = finalpredict.argMax().dataSync()[0];
-//     console.log('ANSWER :', answer);
-//     return argIndex;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
 
 module.exports = {
   loadModel,
